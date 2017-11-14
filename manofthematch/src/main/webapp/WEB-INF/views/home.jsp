@@ -45,7 +45,7 @@
       .row.content {height:auto;} 
     }
   </style>
-</head>
+</head> 
 <body>
 
 <nav class="navbar navbar-inverse" style="background-color:#58AA52;">
