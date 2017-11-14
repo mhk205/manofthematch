@@ -108,7 +108,7 @@
         <p>이달의 베스트일레븐(선수)</p>
       </div>
     </div>
-  </div>
+  </div> 
 </div>
 <!-- 가장 하단의 footer 를 작성합니다. -->
 <footer class="container-fluid text-center">
