@@ -58,7 +58,7 @@
       </button>
       <a class="navbar-brand" href="#">로고</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse" id="myNavbar"> 
     <!-- 상단의 navbar 메뉴를 작성 합니다. -->
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">홈</a></li>
