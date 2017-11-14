@@ -104,7 +104,7 @@
       <div class="well">
         <p>상위20위 팀 랭킹표시(Ajax)<br>1위.잘했군<br>2위.못했군<br>3위.백마축구단<br>4위.으라차차</p>
       </div>
-      <div class="well">
+      <div class="well"> 
         <p>이달의 베스트일레븐(선수)</p>
       </div>
     </div>
