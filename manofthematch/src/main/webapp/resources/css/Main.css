@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/*폰트 설정 */
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/*body 폰트 설정 */
+html body{font-family: 'Noto Sans KR', sans-serif;}
+
+
+    

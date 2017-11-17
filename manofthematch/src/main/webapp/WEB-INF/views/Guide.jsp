@@ -5,10 +5,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Man Of The Match</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- bootstrap 사용 선언 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <!-- css 사용 선언-->
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/Main.css" />
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
@@ -53,7 +59,7 @@
         
         <li><a href="#section3">Git Hub</a></li>
        
-        <li><a href="#section4">메인 페이지!</a></li>
+        <li><a href="/home">메인 페이지</a></li>
       </ul><br>
     </div>
 
