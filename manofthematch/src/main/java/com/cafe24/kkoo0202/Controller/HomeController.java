@@ -1,4 +1,4 @@
-package com.cafe24.kkoo0202;
+package com.cafe24.kkoo0202.Controller;
 
 import java.text.DateFormat;
 import java.util.Date;

@@ -14,9 +14,9 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
-		<!-- taglibs 사용하기 위해 추가 되는 부분 -->
+		<!-- taglibs 사용하기 위해 추가 되는 부분 --> 
     <dependency>
-        <groupId>taglibs</groupId>
+        <groupId>taglibs</groupId> 
         <artifactId>datetime</artifactId>
         <version>1.0.1</version>
     </dependency>        
