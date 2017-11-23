@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.kkoo0202.Member.MemberMapper">
+	
+	<resultMap type="com.cafe24.kkoo0202.Member.Member" id="resultMember">
+		<result column="member_no" property="memberNo" />
+		<result column="member_position" property="memberPosition" />
+		<result column="member_id" property="memberId" />
+		<result column="member_password" property="memberPassword" />
+		<result column="member_name" property="memberName" />
+		<result column="member_sex" property="memberSex" />
+		<result column="member_birthday" property="memberBirthday" />
+		<result column="member_email" property="memberEmail" />
+		<result column="member_phonenumber" property="memberPhonenumber" />
+		<result column="member_picture" property="memberPicture" />
+	</resultMap>
+	
+	<insert id="MemberAdd" parameterType="com.cafe24.kkoo0202.Member.Member">
+	INSERT INTO
+		member(member_no,
+				member_position,
+				member_id,
+				member_password,
+				member_name,
+				member_sex,
+				member_birthday,
+				member_email,
+				member_phonenumber,
+				member_picture
+				
+				) VALUES (
+				#{memberNo},
+				#{memberPosition},
+				#{memberId},
+				#{memberPassword},
+				#{memberName},
+				#{memberSex},
+				#{memberBirthday},
+				#{memberEmail},
+				#{memberPhonenumber},
+				#{memberPicture}
+				)
+	</insert>	
+</mapper> 

@@ -1,4 +1,4 @@
-package com.cafe24.kkoo0202.Controller;
+package com.cafe24.kkoo0202;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -33,7 +33,14 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "Home";
+		
+	}
+	@RequestMapping(value = "/Home", method = RequestMethod.GET)
+	public String homeReturn(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+				
+		return "Home";
 		
 	}
 	
