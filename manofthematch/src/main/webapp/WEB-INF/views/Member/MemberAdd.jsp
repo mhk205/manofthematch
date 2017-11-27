@@ -51,7 +51,7 @@
 		<!-- Module 의 Top2.jsp 를 include 합니다 -->	
 		<c:import url="../Module/Top.jsp"/>
 		<h1> 회원가입 </h1>
-		<form name="insertForm" id="insertForm" action="${pageContext.request.contextPath}/MemberInsert" method="post"><br><br>
+		<form name="insertForm" id="insertForm" action="${pageContext.request.contextPath}/MemberAdd" method="post"><br><br>
 	
 		<div class="form-group" >
 				<label class="col-sm-2 control-label" for="MemberId">아이디  </label>
@@ -148,7 +148,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 control-label" for="MemberEmail">이메일  </label>
 				<div class="col-sm-3">
-			<input class="form-control" type="text" size="15" name="email1" placeholder="이메일을 입력하세요">
+			<input class="form-control" type="text" size="15" name="MemberEmail" placeholder="이메일을 입력하세요">
 				</div>
 		</div>
 		
@@ -170,7 +170,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 control-label" for="MemberPhonenumber">전화번호 </label>
 				<div class="col-sm-3">
-			<input class="form-control" type="text" name="ph2" size="5" maxlength="4">
+			<input class="form-control" type="text" name="MemberPhonenumber" size="5" maxlength="4">
 				</div>
 		</div>
 		
@@ -179,8 +179,8 @@
 			<br>
 		
 		 <div class="form-group">
-		    <label class="col-sm-2 control-label" for="exampleInputFile">사진</label>
-		    <input type="file" id="exampleInputFile">
+		    <label class="col-sm-2 control-label" for="MemberPicture">사진</label>
+		    <input type="file" id="MemberPicture">
 	    </div>
     
       <button type="submit" class="btn btn-default" value="submit">가입완료!</button>

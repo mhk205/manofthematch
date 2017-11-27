@@ -18,29 +18,44 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<insert id="MemberAdd" parameterType="com.cafe24.kkoo0202.Member.Member">
-	INSERT INTO
-		member(member_no,
-				member_position,
-				member_id,
-				member_password,
-				member_name,
-				member_sex,
-				member_birthday,
-				member_email,
-				member_phonenumber,
-				member_picture
-				
-				) VALUES (
-				#{memberNo},
-				#{memberPosition},
-				#{memberId},
-				#{memberPassword},
-				#{memberName},
-				#{memberSex},
-				#{memberBirthday},
-				#{memberEmail},
-				#{memberPhonenumber},
-				#{memberPicture}
-				)
+		INSERT INTO
+			mom_member(member_no,
+					member_position,
+					member_id,
+					member_password,
+					member_name,
+					member_sex,
+					member_birthday,
+					member_email,
+					member_phonenumber,
+					member_picture
+					
+					) VALUES (
+					#{memberNo},
+					#{memberPosition},
+					#{memberId},
+					#{memberPassword},
+					#{memberName},
+					#{memberSex},
+					now(),
+					#{memberEmail},
+					#{memberPhonenumber},
+					#{memberPicture}
+					)
 	</insert>	
+	<select id="MemberList" parameterType="com.cafe24.kkoo0202.Member.Member">
+		SELECT
+			member_no as memberNo,
+			member_id as memberId,
+			member_name as memberName
+		FROM mom_member
+		<where>
+			<if test="word ! = null">
+				member_id like CONCAT('%',#{word},'%')
+			</if>
+		</where>
+		ORDER BY member_no DESC
+		LIMIT #{pageHelper.startRow}, #{pageHelper.linePerPage}
+
+	</select>
 </mapper> 

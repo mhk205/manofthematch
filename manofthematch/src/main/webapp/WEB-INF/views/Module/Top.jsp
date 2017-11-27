@@ -8,8 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
 	<!-- 상단 메뉴를 작성합니다 -->
-		<div class="masthead">
+		<div class="masthead" style="background-image:URL(resources/image/); background-repeat:no-repeat; background-position:center center; background-size:1150px 100px;">
 		     <h3 class="text-muted"><img src="${pageContext.request.contextPath}/resources/image/logo2.png" width=50 height=50 align=left">Man Of The Match</h3>
 		        	<nav>
 			          <ul class="nav nav-justified">

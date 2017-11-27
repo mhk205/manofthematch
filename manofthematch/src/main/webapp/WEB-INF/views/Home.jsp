@@ -37,9 +37,9 @@
 	  			<c:import url="Module/Top.jsp"/>
 	  			
       <!-- Jumbotron -->
-      <div class="jumbotron">
+      <div class="jumbotron" style="background-image:URL(resources/image/background1.jpeg); background-repeat:no-repeat; background-position:center center; background-size:1150px 500px; color:white;" align=center>
       	<img src="resources/image/logo2.png" width=100 height=100 align=left>
-       <h1>Man Of The Match!</h1>&nbsp;
+       <h1 align="left">Man Of The Match!</h1>&nbsp;
         <p class="lead">사회인 축구팀 경기 매칭 사이트 입니다. 자신의 지역의 다른 팀 들을 찾아 매칭을 진행하여 보세요.</p>
         <p><a class="btn btn-lg btn-success" href="#" role="button">시작하기</a></p>
       </div>
@@ -66,7 +66,7 @@
 
       <!-- Site footer -->
       <footer class="footer">
-        <p>&copy; Company 2014</p>
+        <p>&copy; Company 2017</p>
       </footer>
 
     </div> <!-- /container -->
