@@ -14,6 +14,13 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+	<!-- jackson 일반객체를 json 타입으로 뿌려준다 -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.9.2</version>
+		</dependency>
+	
 		<!-- taglibs 사용하기 위해 추가 되는 부분 --> 
     <dependency>
         <groupId>taglibs</groupId> 

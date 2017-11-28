@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -170,7 +171,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 control-label" for="MemberPhonenumber">전화번호 </label>
 				<div class="col-sm-3">
-			<input class="form-control" type="text" name="MemberPhonenumber" size="5" maxlength="4">
+			<input class="form-control" type="text" name="MemberPhonenumber" size="5" maxlength="11">
 				</div>
 		</div>
 		

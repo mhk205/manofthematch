@@ -2,15 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="com.cafe24.kkoo0202.Login.LoginMapper">
 	<resultMap type="com.cafe24.kkoo0202.Login.Login" id="resultLogin">
-		<result column="login_code" property="lCode"></result>
 		<result column="member_id" property="memberId"></result>
 		<result column="member_password" property="memberPassword"></result>
 		<result column="member_name" property="memberName"></result>
-		<result column="login_date" property="loginDate"></result>
-		<result column="login_check" property="loginCheck"></result>
-		<result column="login_ip" property="loginIp"></result>
 	</resultMap>
-
+	
+	<!-- 로그인 -->
+	<select id="login" resultMap="resultLogin" parameterType="com.cafe24.kkoo0202.Login.Login">
+		SELECT member_id, member_name
+		FROM mom_member
+		WHERE member_id=#{memberId} AND member_password=#{memberPassword}
+	</select>
 
 
 </mapper>

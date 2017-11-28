@@ -8,11 +8,24 @@
  <!-- bootstrap 사용선언 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <!-- css 사용 선언-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/Main.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <title>Man Of The Match</title>
+
+<!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+    
+    
 </head>
 <body>
 
@@ -20,11 +33,11 @@
 	<!-- Module 의 Top2.jsp 를 include 합니다 -->	
 		<c:import url="../Module/Top.jsp"/>
       <form class="form-signin">
-        <h4 class="form-signin-heading">로그인 화면 입니다. 아이디와 비밀번호를 입력 해주세요.</h4>
-        <label for="inputEmail" class="sr-only">아이디</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="아이디를 입력해주세요." required autofocus>
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputId" class="sr-only">아이디</label>
+        <input type="id" id="inputId" name="memberId"class="form-control" placeholder="아이디를 입력해주세요." required autofocus>
         <label for="inputPassword" class="sr-only">비밀번호</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="비밀번호를 입력해주세요." required>
+        <input type="password" id="inputPassword" name="memberPassword" class="form-control" placeholder="비밀번호를 입력해주세요." required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> 아이디 비밀번호 기억
