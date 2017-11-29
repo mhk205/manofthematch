@@ -37,7 +37,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 					#{memberPassword},
 					#{memberName},
 					#{memberSex},
-					now(),
+					#{memberBirthday},
 					#{memberEmail},
 					#{memberPhonenumber},
 					#{memberPicture}

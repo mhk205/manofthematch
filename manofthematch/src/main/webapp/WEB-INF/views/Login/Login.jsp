@@ -25,6 +25,29 @@
 <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
     
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('#loginButton').click(function(){
+			var memberId = $('input[name="memberId"]').val().length;
+			var memberPassword = $('input[name="memberPassword"]').val().length;	
+			if(memberId > 0) {
+				$('#loginButton').submit();
+			} else {
+				alert('비밀번호를 입력하세요');
+				$('input[name="memberPassword"]').focus();
+				return false;
+			} 
+			}else {
+				alert('아이디를 입력하세요');
+				$('input[name="memberId"]').focus();
+				return false;
+			}
+		
+		});
+	});
+
+</script> 
     
 </head>
 <body>
@@ -32,18 +55,19 @@
   <div class="container">
 	<!-- Module 의 Top2.jsp 를 include 합니다 -->	
 		<c:import url="../Module/Top.jsp"/>
-      <form class="form-signin">
+		
+      <form id=""Login class="form-signin" method="post" action="${pageContext.request.contextPath}/Login">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputId" class="sr-only">아이디</label>
-        <input type="id" id="inputId" name="memberId"class="form-control" placeholder="아이디를 입력해주세요." required autofocus>
-        <label for="inputPassword" class="sr-only">비밀번호</label>
-        <input type="password" id="inputPassword" name="memberPassword" class="form-control" placeholder="비밀번호를 입력해주세요." required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> 아이디 비밀번호 기억
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+        	<label for="inputId" class="sr-only">아이디</label>
+        		<input type="id" id="inputId" name="memberId"class="form-control" placeholder="아이디를 입력해주세요." required autofocus>
+        	<label for="inputPassword" class="sr-only">비밀번호</label>
+        		<input type="password" id="inputPassword" name="memberPassword" class="form-control" placeholder="비밀번호를 입력해주세요." required>
+        	<div class="checkbox">
+          	<label>
+            	<input type="checkbox" value="remember-me"> 아이디 비밀번호 기억
+          	</label>
+        	</div>
+        <button id="loginButton"class="btn btn-lg btn-primary btn-block" type="submit" value="Login">로그인</button>
       </form>
 
     </div> <!-- /container -->

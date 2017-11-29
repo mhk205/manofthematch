@@ -16,7 +16,7 @@ public class Interceptor extends HandlerInterceptorAdapter {
 		if(session != null && session.getAttribute("loginfor") != null) {
 			return true;
 		}else {
-			response.sendRedirect("./");
+			response.sendRedirect("/");
 			return false;
 		}		
 	

@@ -121,25 +121,9 @@
 			<br>
 		
 		<div class="form-inline">
-			<label class="col-sm-2 control-label" for="MemberBirthday">생년월일  </label> 
-			<select name="MemberBirthday" class="form-control">
-				<c:forEach var="i" begin="0" end="${2018-1900}">
-					<c:set var="yearOption" value="${2018-i}" />
-					<option value="${yearOption}">${yearOption}</option>
-				</c:forEach>
-			</select>년
-			&nbsp; 
-			<select name="MemberBirthday2" class="form-control">
-				<c:forEach var="i" begin="1" end="12">
-					<option value="${i }">${i }</option>
-				</c:forEach>					
-			</select>월				
-			&nbsp; 
-			<select name="MemberBirthday3" class="form-control">
-				<c:forEach var="i" begin="1" end="31">
-					<option value="${i }">${i }</option>
-				</c:forEach>
-			</select>일
+			<label class="col-sm-2 control-label" for="MemberBirthday">생년월일  </label>&nbsp;&nbsp;&nbsp; 
+			<input class="form-control" name="MemberBirthday" type="Date">
+			
 		</div>
 		
 			<div class="row">
