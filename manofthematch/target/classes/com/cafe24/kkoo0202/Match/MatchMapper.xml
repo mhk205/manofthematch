@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.kkoo0202.Match.MatchMapper">
+	
+	<resultMap type="com.cafe24.kkoo0202.Match.Match" id="resultMatch">
+		<result column="mathcing_no" property="mathcing_no" />
+		<result column="mathcing_date" property="mathcing_date" />
+		<result column="ground_no" property="ground_no" />
+		<result column="reward_no" property="reward_no" />
+		<result column="matching_status_condition" property="matching_status_condition" />	
+	</resultMap>
+	
+	<insert id="MatchInsert" parameterType="com.cafe24.kkoo0202.Match.Match">
+		INSERT INTO 
+			mom_matching
+			(mathcing_no,
+			mathcing_date,
+			ground_no,
+			reward_no,
+			matching_status_condition,
+			matching_title
+		)VALUES(
+			#{mathcing_no},
+			#{mathcing_date},
+			#{ground_no},
+			#{reward_no},
+			#{matching_status_condition},
+			#{matching_title}
+			)		
+	</insert>
+		
+	<select id="MatchList" resultType="com.cafe24.kkoo0202.Match.Match">
+		SELECT
+			mathcing_no,
+			mathcing_date,
+			ground_no,
+			reward_no,
+			matching_status_condition,
+			matching_title
+		FROM 
+			mom_matching
+	</select>
+</mapper> 

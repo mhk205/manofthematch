@@ -59,9 +59,9 @@
       <form id=""Login class="form-signin" method="post" action="${pageContext.request.contextPath}/Login">
         <h2 class="form-signin-heading">Please sign in</h2>
         	<label for="inputId" class="sr-only">아이디</label>
-        		<input type="id" id="inputId" name="memberId"class="form-control" placeholder="아이디를 입력해주세요." required autofocus>
+        		<input type="id" id="inputId" name="memberId"class="form-control" value="" placeholder="아이디를 입력해주세요." required autofocus>
         	<label for="inputPassword" class="sr-only">비밀번호</label>
-        		<input type="password" id="inputPassword" name="memberPassword" class="form-control" placeholder="비밀번호를 입력해주세요." required>
+        		<input type="password" id="inputPassword" name="memberPassword" class="form-control" value="" placeholder="비밀번호를 입력해주세요." required>
         	<div class="checkbox">
           	<label>
             	<input type="checkbox" value="remember-me"> 아이디 비밀번호 기억

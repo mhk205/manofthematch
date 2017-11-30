@@ -51,9 +51,9 @@
 				<span class="glyphicon glyphicon-ok-sign"> 매치보드  </span>
 			</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">매치</a></li>
-						<li><a href="#">매치 일정</a></li>
-						<li><a href="#">매치 리스트</a></li>
+						<li><a href="MatchAdd">매치</a></li>
+						<li><a href="MatchIndex">매치 일정</a></li>
+						<li><a href="MatchList">매치 리스트</a></li>
 						<li class="divider"></li>
 						<li><a href="#"></a></li> 
 					</ul>
