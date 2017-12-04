@@ -35,17 +35,38 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "Home";
+		return "Guide/Guide";
 		
 	}
 	@RequestMapping(value = "/Home", method = RequestMethod.GET)
 	public String homeReturn(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 				
-		return "Home";
-		
+		return "Home";		
+	}	
+	@RequestMapping(value = "/GuideProject", method = RequestMethod.GET)
+	public String GuideProject(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+				
+		return "Guide/GuideProject";		
 	}
-	
-	
+	@RequestMapping(value = "/GuideTeam", method = RequestMethod.GET)
+	public String GuideTeam(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+				
+		return "Guide/GuideTeam";		
+	}
+	@RequestMapping(value = "/Guide", method = RequestMethod.GET)
+	public String Guide(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+				
+		return "Guide/Guide";		
+	}
+	@RequestMapping(value = "/GuideErd", method = RequestMethod.GET)
+	public String GuideErd(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+				
+		return "Guide/GuideErd";		
+	}
 	
 }

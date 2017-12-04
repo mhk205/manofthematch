@@ -64,7 +64,7 @@
 				<span class="glyphicon glyphicon-pencil"> 게시판 </span>
 			</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">일반 게시판</a></li>
+						<li><a href="BoardList">일반 게시판</a></li>
 						<li><a href="#">기술 게시판</a></li>
 						<li><a href="#">정보 게시판</a></li>
 						 
