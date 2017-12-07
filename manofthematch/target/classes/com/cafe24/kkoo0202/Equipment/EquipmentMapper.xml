@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.kkoo0202.Equipment.EquipmentMapper">
+
+	<resultMap type="com.cafe24.kkoo0202.Equipment.Equipment" id="resultEquipment">
+		<result column="team_name" property="teamName" />
+		<result column="equipment_ball" property="equipmentBall" />
+		<result column="equipment_uniform" property="equipmentUniform" />
+		<result column="equipment_vest" property="equipmentVest" />
+		<result column="equipment_medicine" property="equipmentMedicine" />
+		<result column="equipment_corn" property="equipmentCorn" />
+		<result column="equipment_glove" property="equipmentGlove" />
+	</resultMap>
+	
+	<select id="EquipmentList" resultMap="resultEquipment">
+		SELECT 
+			team_name,
+			equipment_ball,
+			equipment_uniform,
+			equipment_vest,
+			equipment_medicine,
+			equipment_corn,
+			equipment_glove 
+		FROM 
+			mom_equipment
+	</select>
+	
+	<select id="EquipmentOne" resultMap="resultEquipment">
+		SELECT 
+			team_name,
+			equipment_ball,
+			equipment_uniform,
+			equipment_vest,
+			equipment_medicine,
+			equipment_corn,
+			equipment_glove 
+		FROM 
+			mom_equipment
+		WHERE
+			team_name = #{teamName}
+	</select>
+	
+	<update id="EquipmentUpdate" parameterType="com.cafe24.kkoo0202.Equipment.Equipment">
+		UPDATE mom_equipment
+	SET
+		equipment_ball = #{equipmentBall},
+		equipment_uniform = #{equipmentUniform},
+		equipment_vest = #{equipmentVest},
+		equipment_medicine = #{equipmentMedicine},
+		equipment_corn = #{equipmentCorn},
+		equipment_glove = #{equipmentGlove}
+	WHERE team_name = #{teamName}
+	</update>
+</mapper>

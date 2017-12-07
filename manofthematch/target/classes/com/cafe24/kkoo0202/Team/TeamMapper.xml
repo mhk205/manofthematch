@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.kkoo0202.Team.TeamMapper">
+
+	<resultMap type="com.cafe24.kkoo0202.Team.Team" id="resultTeam">
+		<result column="team_name" property="teamName" />
+		<result column="team_grade_no" property="teamGradeNo" />
+		<result column="local_no" property="localNo" />
+		<result column="team_playtype" property="teamPlaytype" />
+		<result column="team_emblem" property="teamEmblem" />
+	</resultMap>
+
+	<insert id="TeamAdd" parameterType="com.cafe24.kkoo0202.Team.Team">
+		INSERT INTO
+			mom_team
+			(
+			team_name,
+			team_grade_no,
+			local_no,
+			team_playtype,
+			team_emblem
+			)VALUES(
+			#{teamName},
+			#{teamGradeNo},
+			#{localNo},
+			#{teamPlaytype},
+			#{teamEmblem}
+			)
+	</insert>
+	
+	<select id="TeamList" resultMap="resultTeam">
+		SELECT 
+			team_name,
+			team_playtype 
+		FROM 
+			mom_team
+		
+	</select>
+	
+	<!-- <update id="TeamUpdate" parameterType="com.cafe24.kkoo0202.Team.Team">
+		UPDATE mom_team
+		SET
+			team_name = #{teamName},
+			
+	</update> -->
+	
+	
+	
+	
+	
+</mapper>

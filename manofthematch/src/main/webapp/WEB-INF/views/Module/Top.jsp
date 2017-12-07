@@ -51,9 +51,9 @@
 				<span class="glyphicon glyphicon-user"> 팀  </span>
 			</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">팀 생성</a></li>
-						<li><a href="#">팀 관리</a></li>
-						<li><a href="#">전술 관리</a></li>
+						<li><a href="TeamAdd">팀 생성</a></li>
+						<li><a href="TeamList">팀 리스트</a></li>
+						<li><a href="EquipmentList">팀 비품관리</a></li>
 						<li><a href="#">다른 팀 조회</a></li> 
 					</ul>
 		</div>
