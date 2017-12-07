@@ -46,7 +46,7 @@
 	<br><br>			
 				
 	<div class="btn-group btn-group-justified dropdown" role="group" aria-label="false">
-		<div class="btn-group" role="group">
+		<div class="btn-group" role="group"> 
 			<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 				<span class="glyphicon glyphicon-user"> 팀  </span>
 			</button>
