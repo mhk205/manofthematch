@@ -12,8 +12,7 @@ public class MemberDao implements MemberDaoInterface {
 	//회원등록 처리
 	@Override
 	public int MemberAdd (Member member) {
-		
-	 return sqlSessionTemplate.insert("com.cafe24.kkoo0202.Member.MemberMapper.MemberAdd", member);
+		return sqlSessionTemplate.insert("com.cafe24.kkoo0202.Member.MemberMapper.MemberAdd", member);
 	}
 	
 	

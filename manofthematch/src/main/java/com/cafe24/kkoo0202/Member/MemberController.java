@@ -24,7 +24,6 @@ public class MemberController {
 	//form 입력 name과 일치하는 커맨드 객체를 사용
 	@RequestMapping(value="/MemberAdd", method=RequestMethod.POST)
 	public String MemberAdd(Member member) {
-		
 		int resultRow = memberDao.MemberAdd(member);
 		System.out.println(resultRow==1);
 		return "redirect:/";

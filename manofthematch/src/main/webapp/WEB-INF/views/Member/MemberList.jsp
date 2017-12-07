@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<!-- bootstrap »ç¿ë¼±¾ð -->
+	<!-- bootstrap ì‚¬ìš©ì„ ì–¸ -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- css »ç¿ë ¼±¾ð-->
+	<!-- css ì‚¬ìš© ì„ ì–¸-->
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/Main.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -16,9 +16,9 @@
 <body>
 	
 	<div class="container">
-		<!-- Module ÀÇ Top2.jsp ¸¦ include ÇÕ´Ï´Ù -->	
+		<!-- Module ì˜ Top2.jsp ë¥¼ include í•©ë‹ˆë‹¤ -->	
 		<c:import url="../Module/Top.jsp"/>
-	    <h4>È¸¿ø ¸®½ºÆ® ÆäÀÌÁö ÀÔ´Ï´Ù</h4>
+	    <h4>íšŒì› ë¦¬ìŠ¤íŠ¸ íŽ˜ì´ì§€ ìž…ë‹ˆë‹¤</h4>
 	    <table class="table">
 	        <thead>
 	            <tr>
@@ -33,22 +33,22 @@
 	            </c:forEach>
 	        </tbody>
 	    </table>
-	    <!-- ¾ÆÀÌµð °Ë»ö -->
+	    <!-- ì•„ì´ë”” ê²€ìƒ‰ -->
 	    <div>
 	        <form action="/userList">
-	            ¾ÆÀÌµð °Ë»ö : <input type="text" name="word"/><input type="submit"/>
+	            ì•„ì´ë”” ê²€ìƒ‰ : <input type="text" name="word"/><input type="submit"/>
 	        </form>
 	    </div>
-	    <!-- ÆäÀÌÂ¡ -->
+	    <!-- íŽ˜ì´ì§• -->
 	    <div>
 	        <c:if test="${page>1}">
-	            <a href="/userList?page=${page-1}">ÀÌÀü</a>
+	            <a href="/userList?page=${page-1}">ì´ì „</a>
 	        </c:if>
 	        
 	        ${page}
 	        
 	        <c:if test="${page<lastPage}">
-	            <a href="/userList?page=${page+1}">´ÙÀ½</a>
+	            <a href="/userList?page=${page+1}">ë‹¤ìŒ</a>
 	        </c:if>
 	    </div>
 	</div>

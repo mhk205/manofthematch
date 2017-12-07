@@ -1,28 +1,23 @@
 package com.cafe24.kkoo0202.Login;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class LoginDao implements LoginDaoInterface{
+public class LoginDao {
 	
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 	
-	@Override
-	public boolean loginCheck(Login login) {
-		int count = Integer.parseInt(sqlSessionTemplate.selectOne("loginCheck", login).toString()),
-				totalCount = sqlSessionTemplate.selectOne("totalAccount");
-		
-		if(totalCount > 0) {
-			if(count > 0) {
-				return true;
-			} else 
-				return false;
-		}
-		return false;
+	private final String NS="com.cafe24.kkoo0202.Login.LoginMapper";
+	//로그인
+	public Login Login(Login login) {
+		System.out.println("Dao param login: " + login) ;
+		return sqlSessionTemplate.selectOne(NS+".login", login);
 	}
 	
 	

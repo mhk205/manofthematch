@@ -8,17 +8,10 @@
 	</resultMap>
 	
 	<!-- 로그인 -->
-	<select id="loginCheck" resultType="integer" parameterType="com.cafe24.kkoo0202.Login.Login">
-		select count(*) from mom_member
-		<where>
-			member_id = #{memberId}
-				AND
-			member_password = #{memberPassword}	
-		</where>
-	</select>
-	
-	<select id="totalAccount" resultType="integer">
-		SELECT COUNT(*) FROM mom_member
+	<select id="login" resultMap="resultLogin" parameterType="com.cafe24.kkoo0202.Login.Login">
+		SELECT member_id, member_name
+		FROM mom_member
+		WHERE member_id=#{memberId} AND member_password=#{memberPassword}
 	</select>
 
 </mapper>

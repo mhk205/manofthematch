@@ -25,7 +25,20 @@
 			<ul class="nav nav-justified">
 				<li class="active"><a href="Home"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
 				<li><a href="MemberAdd"><span class="glyphicon glyphicon-hand-right">&nbsp;</span>회원가입</a></li>
-				<li><a href="Login"><span class="glyphicon glyphicon-log-in">&nbsp;</span>로그인</a></li>
+				<li>
+				<c:choose>
+					<c:when test="${empty loginfor}">
+						<li><a href="Login"><span class="glyphicon glyphicon-log-in">&nbsp;</span>로그인</a></li>
+					</c:when>
+						<c:otherwise>					
+							<span color="red">${loginfor.memberName}</span>님 로그인 중
+							<form method="post" action="./Logout">
+							<span class="glyphicon glyphicon-log-out">&nbsp;<input class="logout" type="submit" value="Logout"></span>
+							</form>
+						</c:otherwise>
+				</c:choose>
+				</li>
+				
 			</ul>
 		</nav>
 	</div>			
@@ -38,11 +51,10 @@
 				<span class="glyphicon glyphicon-user"> 팀  </span>
 			</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">팀 정보</a></li>
-						<li><a href="#">팀생성</a></li>
-						<li><a href="#">팀 리스트</a></li>
-						<li class="divider"></li>
-						<li><a href="#">팀 비품관리</a></li> 
+						<li><a href="#">팀 생성</a></li>
+						<li><a href="#">팀 관리</a></li>
+						<li><a href="#">전술 관리</a></li>
+						<li><a href="#">다른 팀 조회</a></li> 
 					</ul>
 		</div>
 		
@@ -54,8 +66,6 @@
 						<li><a href="MatchAdd">매치</a></li>
 						<li><a href="MatchIndex">매치 일정</a></li>
 						<li><a href="MatchList">매치 리스트</a></li>
-						<li class="divider"></li>
-						<li><a href="#"></a></li> 
 					</ul>
 		</div>
 		
@@ -64,9 +74,9 @@
 				<span class="glyphicon glyphicon-pencil"> 게시판 </span>
 			</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="BoardList">일반 게시판</a></li>
-						<li><a href="#">기술 게시판</a></li>
-						<li><a href="#">정보 게시판</a></li>
+						<li><a href="BoardList">자유 게시판</a></li>
+						<li><a href="#">축구 강좌</a></li>
+						<li><a href="#">최신 축구 정보</a></li>
 						 
 					</ul>
 		</div>
@@ -97,10 +107,6 @@
 			
 	</div> 
   
-
-
-
-
 		<!-- 				<ul>
 			            <li class="active"><a href="Home"><span class="glyphicon glyphicon-home">&nbsp;</span>Home</a></li>
 			            <li><a href="#"><span class="glyphicon glyphicon-user">&nbsp;</span>팀</a></li>
@@ -113,7 +119,6 @@
 					</ul>
 		        	</nav> 
 		  </div> -->
-
   
 </body>
 </html>
