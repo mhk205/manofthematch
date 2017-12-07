@@ -74,7 +74,7 @@
 				<span class="glyphicon glyphicon-pencil"> 게시판 </span>
 			</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="BoardList">자유 게시판</a></li>
+						<li><a href="BoardAllList">자유 게시판</a></li>
 						<li><a href="#">축구 강좌</a></li>
 						<li><a href="#">최신 축구 정보</a></li>
 						 
