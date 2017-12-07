@@ -9,7 +9,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="mathcing_date" property="mathcing_date" />
 		<result column="ground_no" property="ground_no" />
 		<result column="reward_no" property="reward_no" />
-		<result column="matching_status_condition" property="matching_status_condition" />	
+		<result column="matching_status_condition" property="matching_status_condition" />
+		<result column="mathcing_title" property="mathcing_title"/>
 	</resultMap>
 	
 	<insert id="MatchInsert" parameterType="com.cafe24.kkoo0202.Match.Match">
@@ -38,8 +39,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			ground_no,
 			reward_no,
 			matching_status_condition,
-			matching_title
+			matching_title,
+			member_id
 		FROM 
 			mom_matching
 	</select>
+	
+	<select id="MatchListById" resultType="com.cafe24.kkoo0202.Match.Match">
+		SELECT
+			*
+		FROM 
+			mom_matching		
+		WHERE
+			mathcing_no = #{value}	
+	</select>
+	<select id="MatchCount" resultType="int">
+		SELECT
+			MAX(mathcing_no) 
+		FROM 
+			mom_matching
+	</select>
+	<select id="MatchTeamCalendar" parameterType="com.cafe24.kkoo0202.Match.MatchTeam" resultType="com.cafe24.kkoo0202.Match.MatchTeam">
+		SELECT 
+			team_name,
+			mathcing_date
+		FROM 
+			mom_matching_team
+		WHERE NOT
+			team_name = #{team_name}
+		AND
+			mathcing_no = #{mathcing_no}
+	</select>	
 </mapper> 

@@ -4,4 +4,5 @@ import java.util.List;
 
 public interface GroundDaoInterface {
 	List<Ground> GroundSelect();
+	List<Ground> GroundSelectById(int ground_no);	
 }

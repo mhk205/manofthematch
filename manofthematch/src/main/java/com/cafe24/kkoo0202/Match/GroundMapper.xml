@@ -17,4 +17,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM
 			mom_ground					
 	</select>
+	<select id="GroundSelectById" resultType="com.cafe24.kkoo0202.Match.Ground">
+		SELECT
+			*
+		FROM
+			mom_ground
+		WHERE
+			ground_no = #{ground_no}							
+	</select>
 </mapper> 

@@ -43,9 +43,9 @@
 
 <!-- Example row of columns -->
 	<div class="row" style="margin-left: 50px">
-		<h1>매칭 등록</h1>
-			<form name="MatchForm" id="MatchForm" action="${pageContext.request.contextPath}/MatchInsert" method="post"><br><br>
-				<!-- 매칭 번호: 자동으로 입력되는 값. 지금은 표기용으로 나타내지만, 이후 type을 hidden으로 변경해줄것. -->
+		<h1>매칭 등록</h1>			
+			<form action="${pageContext.request.contextPath}/MatchAdd" method="post" name="MatchForm" id="MatchForm"><br><br>
+				<!-- 매칭 제목:  -->
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="matching_title">매칭제목</label>
 						<div class="col-sm-3">
@@ -53,19 +53,11 @@
 						</div>
 				</div><br>
 				<div class="row"></div><br>
-				<!-- 매칭 번호: 자동으로 입력되는 값. 지금은 표기용으로 나타내지만, 이후 type을 hidden으로 변경해줄것. -->
-				<div class="form-group">
-					<label class="col-sm-2 control-label" for="mathcing_no">매칭번호</label>
-						<div class="col-sm-3">
-							<input class="form-control" name="mathcing_no" id="mathcing_no" type="hidden" readonly="readonly" value="" />
-						</div>
-				</div><br>
-				<div class="row"></div><br>
 				<!-- 매칭 날짜: 변경사항 없음 -->
 				<div class="form-group">
 					<label class="col-sm-2 control-label" for="mathcing_date">매칭날짜 </label>
 						<div class="col-sm-3">
-							<input class="form-control" type="Date" name="mathcing_date" id="mathcing_date" />
+							<input class="form-control" type="datetime-local" name="mathcing_date" id="mathcing_date" />							
 						</div>
 				</div><br>
 				<!-- 구장번호: Ground 쪽에서 db 가져와서 선택하게 할것. -->
@@ -80,19 +72,36 @@
 						&nbsp;
 						</div><br>				
 				<div class="row"></div><br>
+				<!-- 확인용 작성자 아이디 -->
+				<div class="form-group">
+					<!-- <label class="col-sm-2 control-label" for="matching_id">아이디</label> -->
+						<div class="col-sm-3">
+							<input class="form-control" name="member_id" id="member_id" type="hidden">
+						</div>
+				</div><br>
+				<div class="row"></div><br>				
+				<!-- 매칭 번호: 자동으로 입력되는 값. 지금은 표기용으로 나타내지만, 이후 type을 hidden으로 변경해줄것. -->
+				<div class="form-group">
+					<!-- <label class="col-sm-2 control-label" for="mathcing_no">매칭번호</label> -->
+						<div class="col-sm-3">													
+							<input class="form-control" name="mathcing_no" id="mathcing_no" type="hidden" readonly="readonly" value="${MatchCount+1}" />
+						</div>
+				</div><br>
+				<div class="row"></div><br>
+				
 				<div class="form-group">
 				<!-- 등급차이는, 등록기준 상태로 1이 기본 값이며, 차후 리스트에서 성사된 팀의 등급과의 차이를 통해 계산되어 변경되도록 한다. 역시 타입을 hidden으로 변경해준다. -->
-					<label class="col-sm-2 control-label" for="reward_no">등급차이 </label>
+					<!-- <label class="col-sm-2 control-label" for="reward_no">등급차이 </label> -->
 						<div class="col-sm-3">
-							<input class="form-control" name="reward_no" id=reward_no type="text" value="1" readonly="readonly" />
+							<input class="form-control" name="reward_no" id=reward_no type="hidden" value="1" readonly="readonly" />
 						</div>
 				</div>
 				<div class="row"></div><br>
 				<div class="form-group">
 				<!-- 매칭 상태: 기초 값은 대기. 이후 성사되면 성사로 변경된다. 이부분은 리스트에서 앞부분에 상태를 보여줄때 쓸것이다. 역시 기본값은 hidden으로 변경해준다. -->
-					<label class="col-sm-2 control-label" for="matching_status_condition">매칭상태</label>
+					<!-- <label class="col-sm-2 control-label" for="matching_status_condition">매칭상태</label> -->
 						<div class="col-sm-3">
-							<input class="form-control" name="matching_status_condition" id=matching_status_condition type="text" value="대기" readonly="readonly" />
+							<input class="form-control" name="matching_status_condition" id=matching_status_condition type="hidden" value="대기" readonly="readonly" />
 						</div>
 				</div><br>
 				<div style="margin-left: 200px"><button type="submit" class="btn btn-default" value="submit">등록완료</button></div>

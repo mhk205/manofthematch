@@ -4,28 +4,22 @@ import java.util.Date;
 
 public class Match {
 	private int mathcing_no;
-	private Date mathcing_date;
+	private String mathcing_date;
 	private int ground_no;
 	private int reward_no;
 	private String matching_status_condition;
 	private String matching_title;
-	
-	public String getMatching_title() {
-		return matching_title;
-	}
-	public void setMatching_title(String matching_title) {
-		this.matching_title = matching_title;
-	}
+	private String member_id;
 	public int getMathcing_no() {
 		return mathcing_no;
 	}
 	public void setMathcing_no(int mathcing_no) {
 		this.mathcing_no = mathcing_no;
 	}
-	public Date getMathcing_date() {
+	public String getMathcing_date() {
 		return mathcing_date;
 	}
-	public void setMathcing_date(Date mathcing_date) {
+	public void setMathcing_date(String mathcing_date) {
 		this.mathcing_date = mathcing_date;
 	}
 	public int getGround_no() {
@@ -46,11 +40,22 @@ public class Match {
 	public void setMatching_status_condition(String matching_status_condition) {
 		this.matching_status_condition = matching_status_condition;
 	}
+	public String getMatching_title() {
+		return matching_title;
+	}
+	public void setMatching_title(String matching_title) {
+		this.matching_title = matching_title;
+	}
+	public String getMember_id() {
+		return member_id;
+	}
+	public void setMember_id(String member_id) {
+		this.member_id = member_id;
+	}
 	@Override
 	public String toString() {
 		return "Match [mathcing_no=" + mathcing_no + ", mathcing_date=" + mathcing_date + ", ground_no=" + ground_no
 				+ ", reward_no=" + reward_no + ", matching_status_condition=" + matching_status_condition
-				+ ", matching_title=" + matching_title + "]";
-	}
-	
+				+ ", matching_title=" + matching_title + ", member_id=" + member_id + "]";
+	}	
 }
