@@ -78,7 +78,7 @@
 						<li><a href="#">축구 강좌</a></li>
 						<li><a href="#">최신 축구 정보</a></li>
 						 
-					</ul>
+					</ul> 
 		</div>
 		
 		<div class="btn-group" role="group">
