@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class MatchTeam {
 	private int mathcing_no;
-	private Date mathcing_date;
+	private String mathcing_date;
 	private int ground_no;
 	private int matching_type_code;
 	private String team_name;
@@ -14,10 +14,10 @@ public class MatchTeam {
 	public void setMathcing_no(int mathcing_no) {
 		this.mathcing_no = mathcing_no;
 	}
-	public Date getMathcing_date() {
+	public String getMathcing_date() {
 		return mathcing_date;
 	}
-	public void setMathcing_date(Date mathcing_date) {
+	public void setMathcing_date(String mathcing_date) {
 		this.mathcing_date = mathcing_date;
 	}
 	public int getGround_no() {

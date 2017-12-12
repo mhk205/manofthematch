@@ -21,15 +21,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			ground_no,
 			reward_no,
 			matching_status_condition,
-			matching_title
+			matching_title,
+			member_id
 		)VALUES(
 			#{mathcing_no},
 			#{mathcing_date},
 			#{ground_no},
 			#{reward_no},
 			#{matching_status_condition},
-			#{matching_title}
+			#{matching_title},
+			#{member_id}
 			)		
+	</insert>
+	<insert id="MatchTeamInsert" parameterType="com.cafe24.kkoo0202.Match.MatchTeam">
+		INSERT INTO 
+			mom_matching_team
+			(mathcing_no,
+			mathcing_date,
+			ground_no,
+			matching_type_code,
+			team_name			
+		)VALUES(
+			#{mathcing_no},
+			#{mathcing_date},
+			#{ground_no},
+			#{matching_type_code},
+			#{team_name}
+			)	
 	</insert>
 		
 	<select id="MatchList" resultType="com.cafe24.kkoo0202.Match.Match">
@@ -53,11 +71,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE
 			mathcing_no = #{value}	
 	</select>
+	
+	<select id="MatchListByMId" parameterType="String" resultType="com.cafe24.kkoo0202.Match.Match">
+		SELECT
+			*
+		FROM 
+			mom_matching		
+		WHERE
+			member_id = #{member_id} 
+		AND 
+			matching_status_condition = '성사'	
+	</select>
+	
 	<select id="MatchCount" resultType="int">
 		SELECT
 			MAX(mathcing_no) 
 		FROM 
 			mom_matching
+	</select>
+	<select id="MatchTeamCount" parameterType="int" resultType="int">
+		SELECT 
+			count(*)
+		FROM 
+			mom_matching_team
+		WHERE
+			mathcing_no = #{mathcing_no}
 	</select>
 	<select id="MatchTeamCalendar" parameterType="com.cafe24.kkoo0202.Match.MatchTeam" resultType="com.cafe24.kkoo0202.Match.MatchTeam">
 		SELECT 
@@ -70,4 +108,41 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		AND
 			mathcing_no = #{mathcing_no}
 	</select>	
+	<select id="MatchTeamSelect" parameterType="int" resultType="com.cafe24.kkoo0202.Match.MatchTeam">
+		SELECT 
+			*
+		FROM 
+			mom_matching_team
+		WHERE 
+			mathcing_no = #{mathcing_no}
+	</select>
+	<select id="MamberNoById" parameterType="String" resultType="int">
+		SELECT 
+			member_no 
+		FROM 
+			mom_member 
+		WHERE 
+			member_id = #{member_id}
+	</select>
+	<update id="MatchUpdate" parameterType="com.cafe24.kkoo0202.Match.Match">
+		UPDATE 
+			mom_matching
+		SET 
+			matching_status_condition = #{matching_status_condition}
+		WHERE
+			mathcing_no = #{mathcing_no} 
+	</update>
+	
+	<delete id="MatchListRemove" parameterType="int">
+		DELETE FROM 
+			mom_matching		
+		WHERE 
+			mathcing_no = #{mathcing_no} 		
+	</delete>
+	<delete id="MatchTeamRemove" parameterType="int">
+		DELETE FROM 
+			mom_matching_team		
+		WHERE 
+			mathcing_no = #{mathcing_no} 		
+	</delete>
 </mapper> 

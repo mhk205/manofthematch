@@ -42,7 +42,8 @@
 
       <!-- Example row of columns -->
       <div class="row" align="left">
-        		<c:import url="../Match/MatchCarlendar.jsp"/>
+        		<%-- <c:import url="../Match/MatchCarlendar.jsp"/> --%>
+        		
       </div>
 
       <!-- Site footer -->

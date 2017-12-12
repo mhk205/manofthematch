@@ -40,27 +40,26 @@
 		<!-- Example row of columns -->
 		<div class="row" align="left">
 			<div class="container">
-			<h2>Matching Board</h2>         
-				<table class="table">
-					<thead>
-						<tr>
-							<th>No</th>
-							<th>Title</th>
-							<th>Name</th>
-							<th>Condition</th>
-							<th>Date</th>
-						</tr>
-					</thead>
+			<h2>매칭 게시판</h2>         
+				<table class="table table-striped table-bordered" style="text-align: center">
 					<tbody>
+						<tr>
+							<td class="col-sm-1">번호</td>
+							<td class="col-sm-6">제목</td>
+							<td class="col-sm-2">작성자</td>
+							<td class="col-sm-1">상황</td>
+							<td class="col-sm-2">경기 날짜</td>							
+						</tr>					
 					<c:forEach items="${MatchList}" var="M">
 						<tr>
 							<td>${M.mathcing_no}</td>
-							<td>${M.matching_title}</td>
-							<td>${M.mathcing_no}</td>
-							<td>${M.matching_status_condition}</td>
+							<td><a href="Detail?param=${M.mathcing_no}">${M.matching_title}</a></td>
+							<td>${M.member_id}</td>							
+							<td>${M.matching_status_condition}</td>												
 							<td>${M.mathcing_date}</td>
 						</tr>
-					</c:forEach>									    
+					</c:forEach>	
+													    
 					</tbody>
 				</table>
 			</div>			

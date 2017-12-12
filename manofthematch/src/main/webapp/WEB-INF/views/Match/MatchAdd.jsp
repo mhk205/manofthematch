@@ -72,39 +72,45 @@
 						&nbsp;
 						</div><br>				
 				<div class="row"></div><br>
-				<!-- 확인용 작성자 아이디 -->
+				<input class="form-control" name="member_id" id="member_id" type="hidden" value="${loginfor.memberId}">
+				<input class="form-control" name="mathcing_no" id="mathcing_no" type="hidden" readonly="readonly" value="${MatchCount+1}" />
+				<input class="form-control" name="reward_no" id=reward_no type="hidden" value="1" readonly="readonly" />
+				<input class="form-control" name="matching_status_condition" id=matching_status_condition type="hidden" value="대기" readonly="readonly" />
+				<div style="margin-left: 200px"><button type="submit" class="btn btn-default" value="submit">등록완료</button></div>
+				<!-- 
+				확인용 작성자 아이디
 				<div class="form-group">
-					<!-- <label class="col-sm-2 control-label" for="matching_id">아이디</label> -->
+					<label class="col-sm-2 control-label" for="matching_id">아이디</label>
 						<div class="col-sm-3">
-							<input class="form-control" name="member_id" id="member_id" type="hidden">
+							
 						</div>
 				</div><br>
 				<div class="row"></div><br>				
-				<!-- 매칭 번호: 자동으로 입력되는 값. 지금은 표기용으로 나타내지만, 이후 type을 hidden으로 변경해줄것. -->
+				매칭 번호: 자동으로 입력되는 값. 지금은 표기용으로 나타내지만, 이후 type을 hidden으로 변경해줄것.
 				<div class="form-group">
-					<!-- <label class="col-sm-2 control-label" for="mathcing_no">매칭번호</label> -->
+					<label class="col-sm-2 control-label" for="mathcing_no">매칭번호</label>
 						<div class="col-sm-3">													
-							<input class="form-control" name="mathcing_no" id="mathcing_no" type="hidden" readonly="readonly" value="${MatchCount+1}" />
+							
 						</div>
 				</div><br>
 				<div class="row"></div><br>
 				
 				<div class="form-group">
-				<!-- 등급차이는, 등록기준 상태로 1이 기본 값이며, 차후 리스트에서 성사된 팀의 등급과의 차이를 통해 계산되어 변경되도록 한다. 역시 타입을 hidden으로 변경해준다. -->
-					<!-- <label class="col-sm-2 control-label" for="reward_no">등급차이 </label> -->
+				등급차이는, 등록기준 상태로 1이 기본 값이며, 차후 리스트에서 성사된 팀의 등급과의 차이를 통해 계산되어 변경되도록 한다. 역시 타입을 hidden으로 변경해준다.
+					<label class="col-sm-2 control-label" for="reward_no">등급차이 </label>
 						<div class="col-sm-3">
-							<input class="form-control" name="reward_no" id=reward_no type="hidden" value="1" readonly="readonly" />
+							
 						</div>
 				</div>
 				<div class="row"></div><br>
 				<div class="form-group">
-				<!-- 매칭 상태: 기초 값은 대기. 이후 성사되면 성사로 변경된다. 이부분은 리스트에서 앞부분에 상태를 보여줄때 쓸것이다. 역시 기본값은 hidden으로 변경해준다. -->
-					<!-- <label class="col-sm-2 control-label" for="matching_status_condition">매칭상태</label> -->
+				매칭 상태: 기초 값은 대기. 이후 성사되면 성사로 변경된다. 이부분은 리스트에서 앞부분에 상태를 보여줄때 쓸것이다. 역시 기본값은 hidden으로 변경해준다.
+					<label class="col-sm-2 control-label" for="matching_status_condition">매칭상태</label>
 						<div class="col-sm-3">
-							<input class="form-control" name="matching_status_condition" id=matching_status_condition type="hidden" value="대기" readonly="readonly" />
+							
 						</div>
 				</div><br>
-				<div style="margin-left: 200px"><button type="submit" class="btn btn-default" value="submit">등록완료</button></div>
+				 -->
 				
 			</form>
 	</div>
