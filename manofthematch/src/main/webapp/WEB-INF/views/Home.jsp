@@ -37,13 +37,38 @@
 	  			<c:import url="Module/Top.jsp"/>
 	  			
       <!-- Jumbotron -->
-      <div class="jumbotron" style="background-image:URL(resources/image/background1.jpeg); background-repeat:no-repeat; background-position:center center; background-size:1150px 500px; color:white;" align=center>
-      	<img src="resources/image/logo2.png" width=100 height=100 align=left>
-       <h1 align="left">Man Of The Match!</h1>&nbsp;
-        <p class="lead">사회인 축구팀 경기 매칭 사이트 입니다. 자신의 지역의 다른 팀 들을 찾아 매칭을 진행하여 보세요.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">시작하기</a></p>
+      <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+      	<ol class="carousel-indicators">
+      		<li data-target="#myCarousel1" data-slide="0" class="active"></li>
+      		<li data-target="#myCarousel1" data-slide="1"></li>
+      		<li data-target="#myCarousel1" data-slide="2"></li>
+      	</ol>
+       <div class="carousel-inner maincarouselitem">
+	      	<div class="item active maincarouseliteminner" style="background-image:URL(resources/image/background1.jpeg); background-repeat:no-repeat; background-position:center center; background-size:1150px 500px;  height: 300px; color:white;" align=center>
+	      	<br>
+	      	<img src="resources/image/logo2.png" width=100 height=100 align=left>
+	        <h1 align="left">Man Of The Match!</h1>&nbsp;
+	        <br>
+	        <p class="lead">사회인 축구팀 경기 매칭 사이트 입니다. 자신의 지역의 다른 팀 들을 찾아 매칭을 진행하여 보세요.</p>
+	        <a class="btn btn-lg btn-success" href="MatchList" role="button">시작하기</a>
+	       </div>
+	       <div class="item maincarouseliteminner" style="background-image:URL(resources/image/tactics.jpg); background-repeat:no-repeat; background-position:center center; background-size:1150px 500px; height: 300px; color:yellow;" align=center>
+	       <br>
+	       <h1 align="center">전술현황판 기능을 이용하세요</h1>&nbsp;
+	        <br>
+	        <h3 class="lead"><b>전술현황판 을 통해서 팀원을 배치하고 전술을 토론 해보세요!</b></h3>
+	        <p><a class="btn btn-lg btn-primary" href="TeamTactics" role="button">전술현황판 으로</a></p>
+	      </div>
+	      <div class="item maincarouseliteminner" style="background-image:URL(resources/image/team.jpg); background-repeat:no-repeat; background-position:center center; background-size:1150px 500px; height: 300px; color:white;" align=center>
+	       <br> 
+	       <h1 align="center">게시판을 통해 의견을 나누세요</h1>&nbsp;
+	        <br>
+	        <h3 class="lead"><b>모두가 당신의 동료 입니다. 게시판에서 의견을 나눠보세요 </b></h3>
+	        <p><a class="btn btn-lg btn-info" href="BoardAllList" role="button">게시판 으로</a></p>
+	      </div>
       </div>
-
+	</div>
+	
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-4">
@@ -62,16 +87,19 @@
           <p>게시판 에서 다른 사람들과 의견을 공유해 보세요.</p>
           <p><a class="btn btn-primary" href="#" role="button">자세하게 보기 &raquo;</a></p>
         </div>
-      </div>
+     
+     </div>
+     
+   </div>
 
       <!-- Site footer -->
       <footer class="footer">
         <p>&copy; Company 2017</p>
       </footer>
 
-    </div> <!-- /container -->
+     <!-- /container -->
 
-</div>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>

@@ -54,7 +54,7 @@
 						<li><a href="TeamAdd">팀 생성</a></li>
 						<li><a href="TeamList">팀 리스트</a></li>
 						<li><a href="EquipmentList">팀 비품관리</a></li>
-						<li><a href="#">다른 팀 조회</a></li> 
+						<li><a href="TeamTactics">전술현황판</a></li> 
 					</ul>
 		</div>
 		
@@ -63,7 +63,7 @@
 				<span class="glyphicon glyphicon-ok-sign"> 매치보드  </span>
 			</button>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="MatchAdd">매치 등록</a></li>
+						<li><a href="MatchAdd">매치</a></li>
 						<li><a href="MatchIndex">매치 일정</a></li>
 						<li><a href="MatchList">매치 리스트</a></li>
 					</ul>
