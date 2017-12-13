@@ -25,5 +25,13 @@ public class TeamDao {
 		return SST.selectList(NS+"TeamList");
 		
 	}
-
+	
+	// 하나의 팀 만 불러오기
+	public Team TeamOne(String teamName) {
+		System.out.println("TeamDao의 TeamOne메솓드: " +teamName );
+		return SST.selectOne(NS+"TeamOne", teamName);
+		
+	}
+	
+	
 }

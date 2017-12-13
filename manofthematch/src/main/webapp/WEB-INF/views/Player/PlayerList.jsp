@@ -24,25 +24,32 @@
 	<!-- Module 의 Top2.jsp 를 include 합니다 -->	
 		<c:import url="../Module/Top.jsp"/>
 <div class="row" style="margin-left: 50px">		
-	<h1>팀 리스트</h1>
+	<h1>선수 리스트</h1>
 	<table class="table">
 		<tr>
+			<th>이름</th>
 			<th>팀 이름</th>
-			<th>팀 경기 유형</th>
-			<th>팀 정보</th>  
-			<th>가입 신청</th>
+			<th>선수등급</th>  
+			<th>포지션</th>
+			<th>선수 등번호</th>
+			<th>선출여부</th>
+			<th>체력등급</th>
+			<th>축구경력</th>
 		</tr>
-		<c:forEach items="${TeamList }" var="Team">
+		<c:forEach items="${PlayerList }" var="Player">
 			<tr>
-				<td>${Team.teamName }</td>
-				<td>${Team.teamPlaytype }</td>
-				<td><a class="btn-default btn-sm"  href="${pageContext.request.contextPath}/TeamSangse?teamName=${Team.teamName}">둘러보기</a></td>
-				<td><a class="btn-default btn-sm" href="=">가입 신청</a></td>
+				<td>${Player.memberNo }</td>
+				<td>${Player.teamName }</td>
+				<td>${Player.playGradeNo }등급</td>
+				<td>${Player.positionNo }</td>
+				<td>${Player.playerBackno }번</td>
+				<td>${Player.playerPlayerstatus }</td>
+				<td>${Player.strengthNo }등급</td>
+				<td>${Player.footballCareerNo }년</td>
 			</tr>
 		</c:forEach>
 	</table>
 </div>	
 </body>
 </html>
-
 

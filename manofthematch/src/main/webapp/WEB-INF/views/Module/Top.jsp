@@ -54,7 +54,8 @@
 						<li><a href="TeamAdd">팀 생성</a></li>
 						<li><a href="TeamList">팀 리스트</a></li>
 						<li><a href="EquipmentList">팀 비품관리</a></li>
-						<li><a href="TeamTactics">전술현황판</a></li> 
+						<li><a href="TeamTactics">전술현황판</a></li>
+						<li><a href="PlayerList">선수 리스트</a></li>  
 					</ul>
 		</div>
 		

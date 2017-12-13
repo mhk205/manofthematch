@@ -14,7 +14,7 @@ public class EquipmentService {
 	@Autowired
 	HttpSession session;
 
-	// 팀 비품 리스트
+	// 모든 팀 비품 리스트
 	public void EquipmentList(Model model) {
 		model.addAttribute("EquipmentList", Dao.EquipmentList());
 		session.setAttribute("top", "equipment");
@@ -32,4 +32,19 @@ public class EquipmentService {
 		}
 		Dao.EquipmentUpdate(equipment);
 	}
+	
+	// 한 팀의 비품리스트
+	public void TeamEquipmentListOne(Model model, String teamName) {
+		model.addAttribute("Equipment", Dao.TeamEquipmentListOne(teamName));
+	}
 }
+
+
+
+
+
+
+
+
+
+

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 <!-- Bootstrap core CSS -->
+<!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
@@ -17,32 +17,41 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->  
-<title>팀 리스트</title>
+    <![endif]-->   
+<title>팀 선수 리스트</title>
 </head>
 <body>
 	<!-- Module 의 Top2.jsp 를 include 합니다 -->	
-		<c:import url="../Module/Top.jsp"/>
-<div class="row" style="margin-left: 50px">		
-	<h1>팀 리스트</h1>
-	<table class="table">
+	<c:import url="../Module/Top.jsp"/>
+<h1>팀 선수 리스트</h1>	
+
+<table class="table">
 		<tr>
 			<th>팀 이름</th>
-			<th>팀 경기 유형</th>
-			<th>팀 정보</th>  
-			<th>가입 신청</th>
+			<th>선수이름</th>
+			<th>선수 등급</th>  
+			<th>포지션</th>
+			<th>등번호</th>
+			<th>선출여부</th>
+			<th>체력등급</th>
+			<th>축구경력</th>
 		</tr>
-		<c:forEach items="${TeamList }" var="Team">
+	
+		<c:forEach items="${Player }" var="Player">
 			<tr>
-				<td>${Team.teamName }</td>
-				<td>${Team.teamPlaytype }</td>
-				<td><a class="btn-default btn-sm"  href="${pageContext.request.contextPath}/TeamSangse?teamName=${Team.teamName}">둘러보기</a></td>
-				<td><a class="btn-default btn-sm" href="=">가입 신청</a></td>
+				<td>${Player.teamName }</td>
+				<td>${Player.memberName }</td>
+				<td>${Player.playGradeNo }</td>
+				<td>${Player.memberPosition }</td>
+				<td>${Player.playerBackno }</td>
+				<td>${Player.playerPlayerstatus }</td>
+				<td>${Player.strengthNo }</td>
+				<td>${Player.footballCareerNo }</td>
 			</tr>
 		</c:forEach>
-	</table>
-</div>	
+		
+</table>
+
+
 </body>
 </html>
-
-

@@ -38,15 +38,37 @@
 		
 	</select>
 	
-	<!-- <update id="TeamUpdate" parameterType="com.cafe24.kkoo0202.Team.Team">
-		UPDATE mom_team
-		SET
-			team_name = #{teamName},
-			
-	</update> -->
-	
-	
-	
-	
-	
+	<select id="TeamOne" resultMap="resultTeam">
+		SELECT 
+			a.team_name,
+			a.team_grade_no,
+			a.local_no,
+			b.city_name,
+			a.team_playtype,
+			a.team_emblem
+		FROM
+			mom_team a
+		INNER JOIN 
+			mom_city b
+		ON 
+			a.local_no = b.city_no
+		WHERE 
+			a.team_name = #{teamName}
+	</select>
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

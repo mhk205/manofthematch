@@ -25,5 +25,10 @@ public class TeamService {
 		model.addAttribute("TeamList", dao.TeamList());
 		session.setAttribute("top", "team");
 	}
+	
+	// 하나의 팀 불러오기 폼 (팀 수정폼이 될 수 있음)
+	public void TeamOne(Model model, String teamName) {
+		model.addAttribute("Team", dao.TeamOne(teamName));
+	}
 
 }

@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cafe24.kkoo0202.Match.PlayerMapper">	
-	<resultMap type="com.cafe24.kkoo0202.Match.Player" id="resultPlayer">
+<mapper namespace="com.cafe24.kkoo0202.Match.PlayerMapper2">	
+	<resultMap type="com.cafe24.kkoo0202.Match.Player2" id="resultPlayer2">
 		<result column="member_no" property="member_no" />
 		<result column="team_name" property="team_name" />
 		<result column="player_grade_no" property="player_grade_no" />
@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="football_career_no" property="football_career_no" />	
 	</resultMap>	
 		
-	<select id="PlayerList" parameterType="int" resultType="com.cafe24.kkoo0202.Match.Player">
+	<select id="PlayerList" parameterType="int" resultType="com.cafe24.kkoo0202.Match.Player2">
 		SELECT 
 			* 
 		FROM 

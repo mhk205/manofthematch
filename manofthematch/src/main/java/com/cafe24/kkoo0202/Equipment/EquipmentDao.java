@@ -27,4 +27,10 @@ public class EquipmentDao {
 	public void EquipmentUpdate(Equipment equipment) {
 		SST.update(NS+"EquipmentUpdate", equipment);
 	}
+	
+	// 한 팀의 비품 리스트
+	public Equipment TeamEquipmentListOne(String teamName) {
+		return SST.selectOne(NS+"TeamEquipmentListOne", teamName);
+	}
+
 }

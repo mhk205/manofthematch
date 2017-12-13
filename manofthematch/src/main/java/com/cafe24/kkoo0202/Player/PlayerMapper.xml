@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.kkoo0202.Player.PlayerMapper">
+
+	<resultMap type="com.cafe24.kkoo0202.Player.Player" id="resultPlayer">
+		<result column="member_no" property="memberNo" />
+		<result column="team_name" property="teamName" />
+		<result column="player_grade_no" property="playGradeNo" />
+		<result column="position_no" property="positionNo" />
+		<result column="player_backno" property="playerBackno" />
+		<result column="player_playerstatus" property="playerPlayerstatus" />
+		<result column="strength_no" property="strengthNo" />
+		<result column="football_career_no" property="footballCareerNo" />
+		<result column="member_name" property="memberName" />
+		<result column="member_position" property="memberPosition" />
+	</resultMap>
+	
+	<!-- 플레이어 리스트  -->
+	<select id="PlayerList" resultMap="resultPlayer">
+		SELECT
+			member_no,
+			team_name,
+			player_grade_no,
+			position_no,
+			player_backno,
+			player_playerstatus,
+			strength_no,
+			football_career_no
+		FROM
+			mom_player
+	</select>
+	
+	<!-- 한 팀의 플레이어 리스트  -->
+	<select id="PlayerListOne" resultMap="resultPlayer" parameterType="String">
+		SELECT 
+			a.member_no,
+			a.team_name,
+			a.player_grade_no,
+			a.position_no,
+			a.player_backno,
+			a.player_playerstatus,
+			a.strength_no,
+			a.football_career_no,
+			b.member_name,
+			b.member_position
+		FROM 
+			mom_player a
+		INNER JOIN 
+			mom_member b
+		ON
+			a.member_no = b.member_no
+		WHERE
+			a.team_name = #{teamName}
+	</select>
+	
+	<!-- 플레이어 수정  -->
+</mapper>
+
+
+
+
+
+
+
+
+
+

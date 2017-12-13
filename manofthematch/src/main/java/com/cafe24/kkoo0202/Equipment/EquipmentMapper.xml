@@ -25,7 +25,7 @@
 		FROM 
 			mom_equipment
 	</select>
-	
+	<!-- 모든팀의 비품 불러오기 -->
 	<select id="EquipmentOne" resultMap="resultEquipment">
 		SELECT 
 			team_name,
@@ -41,8 +41,27 @@
 			team_name = #{teamName}
 	</select>
 	
+	<!-- 한팀의 비품 불러오기 -->
+	<select id="TeamEquipmentListOne" resultMap="resultEquipment">
+	SELECT 
+			team_name,
+			equipment_ball,
+			equipment_uniform,
+			equipment_vest,
+			equipment_medicine,
+			equipment_corn,
+			equipment_glove 
+		FROM 
+			mom_equipment
+		WHERE
+			team_name = #{teamName}
+	</select>
+	
+	 
+	 <!-- 비품수정  -->
 	<update id="EquipmentUpdate" parameterType="com.cafe24.kkoo0202.Equipment.Equipment">
-		UPDATE mom_equipment
+	UPDATE 
+		mom_equipment
 	SET
 		equipment_ball = #{equipmentBall},
 		equipment_uniform = #{equipmentUniform},
@@ -50,6 +69,10 @@
 		equipment_medicine = #{equipmentMedicine},
 		equipment_corn = #{equipmentCorn},
 		equipment_glove = #{equipmentGlove}
-	WHERE team_name = #{teamName}
+	WHERE 
+		team_name = #{teamName}
 	</update>
 </mapper>
+
+
+
