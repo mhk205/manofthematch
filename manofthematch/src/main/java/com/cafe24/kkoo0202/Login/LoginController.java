@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class LoginController {
-	
+	  
 	final static org.slf4j.Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
 	@Autowired
