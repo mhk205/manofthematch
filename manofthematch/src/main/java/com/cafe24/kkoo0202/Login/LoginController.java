@@ -15,7 +15,7 @@ public class LoginController {
 	  
 	final static org.slf4j.Logger logger = LoggerFactory.getLogger(LoginController.class);
 	
-	@Autowired
+	@Autowired  
 	private LoginService loginService;
 
 	//濡쒓렇?????붿껌
