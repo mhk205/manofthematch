@@ -43,6 +43,7 @@ public class TeamController {
 		model.addAttribute("Team", team);
 		return "Team/TeamSangse";
 	}
+	
 	@RequestMapping(value="/TeamTactics")
 	public String teamTactics(Model model) {
 		teamService.TeamList(model);
