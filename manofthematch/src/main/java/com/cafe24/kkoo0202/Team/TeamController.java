@@ -14,12 +14,12 @@ public class TeamController {
 	@Autowired
 	TeamService teamService;
 	
-	//팀 생성
+	//�� �깮�꽦
 	@RequestMapping(value="/TeamAdd", method=RequestMethod.GET)
 	public String TeamAdd() {
 		return "Team/TeamAdd";
 	}
-	// 팀 생성 처리 
+	// �� �깮�꽦 泥섎━ 
 	@RequestMapping(value="/TeamAdd", method=RequestMethod.POST)
 	public String TeamAdd(Team team) {
 		int resultRow = teamDao.TeamAdd(team);
@@ -27,7 +27,7 @@ public class TeamController {
 		return "redirect:/";
 	}
 	
-	// 팀 리스트
+	// �� 由ъ뒪�듃
 	@RequestMapping(value="/TeamList")
 		public String teamList(Model model) {
 			teamService.TeamList(model);
@@ -35,13 +35,19 @@ public class TeamController {
 		
 	}
 	
-	// 하나의 팀 정보 불러오기( 팀 수정이 될 수 있음 )
+	// �븯�굹�쓽 �� �젙蹂� 遺덈윭�삤湲�( �� �닔�젙�씠 �맆 �닔 �엳�쓬 )
 	@RequestMapping(value="/TeamSangse")
 	public String teamSangse(Model model, @RequestParam(value="teamName", required = true) String teamName) {
 		Team team = teamDao.TeamOne(teamName);
-		System.out.println("TeamController의 teamSangse메솓드: " +teamName );
+		System.out.println("TeamController�쓽 teamSangse硫붿넃�뱶: " +teamName );
 		model.addAttribute("Team", team);
 		return "Team/TeamSangse";
 	}
+	@RequestMapping(value="/TeamTactics")
+	public String teamTactics(Model model) {
+		teamService.TeamList(model);
+		return "Team/TeamTactics";
+	
+}
 
 }
