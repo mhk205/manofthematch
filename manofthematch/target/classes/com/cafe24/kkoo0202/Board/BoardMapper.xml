@@ -10,24 +10,28 @@
 		<result column="board_content" property="boardContent"></result>
 		<result column="board_date" property="boardDate"></result>
 		<result column="board_file" property="boardFile"></result>
+		<result column="member_id" property="memberId"></result>
+		
 	</resultMap>
 	
 	<!-- 게시글 추가 -->
 	<insert id="boardAdd" parameterType="com.cafe24.kkoo0202.Board.Board">
 		INSERT INTO mom_board(
-			board_pw
-			, board_category_no
+			board_category_no
 			, board_name
 			, board_content
 			, board_date
-			, board_file)
+			, board_file
+			, member_id
+			, member_no)
 		VALUES (
-			#{boardPw}
-			, #{boardCategoryNo}
+			 #{boardCategoryNo}
 			, #{boardName}
 			, #{boardContent}
 			, NOW()
 		 	, #{boardFile}
+		 	, #{memberId}
+		 	, #{memberNo}
 		 )
 	</insert>
 	
@@ -37,14 +41,12 @@
 			SET board_name = #{boardName}
 			, board_content = #{boardContent}
 		WHERE board_no = #{boardNo}
-		AND board_pw = #{boardPw}
 	</update>
 	
 	<!-- 게시글 삭제 -->
 	<delete id="boardRemove" parameterType="com.cafe24.kkoo0202.Board.Board">
 		DELETE FROM mom_board 
 		WHERE board_no = #{boardNo} 
-		AND board_pw = #{boardPw}
 	</delete>
 	
 	<!-- 전체리스트보기 -->
@@ -58,7 +60,6 @@
 			, board_content AS boardContent
 			, board_date AS boardDate
 			, board_file AS boardFile
-			, board_pw AS boardPw
 		FROM mom_board
 		ORDER BY board_date DESC 
 		LIMIT #{beginRow}, #{pagePerRow}
@@ -80,6 +81,7 @@
 			, board_content AS boardContent
 		  	, board_date AS boardDate
 			, board_file AS boardFile
+			, member_id AS memberId
 		FROM mom_board 
 		WHERE board_no = #{boardNo}
 	</select>

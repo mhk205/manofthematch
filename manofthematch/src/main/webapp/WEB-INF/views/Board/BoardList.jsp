@@ -78,18 +78,22 @@
 	 		<c:when test="${currentPage eq 1 }">
 	 			<li class="previous"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${currentPage}" style="color: #8C8C8C">이전</a></li>
 	 		</c:when>
+	 		<c:when test="${currentPage - 10 lt 1}">
+	 			<li class="previous"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${currentPage}" style="color: #8C8C8C">이전</a></li>
+	 		</c:when>
 	 		<c:otherwise>
-	 			<li class="previous"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${currentPage-1}">이전</a></li>
+	 			<li class="previous"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${currentPage-10}">이전</a></li>
 	 		</c:otherwise>
 	 	</c:choose>    	
         
-     	<c:forEach begin = "1" end = "10" var="x" varStatus="status">
+        <!-- (x-1)*currentPage + x  -->
+     	<c:forEach begin = "1" end = "10" var = "x" varStatus="status">
 	     	<li class="pagination"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${x}">${x}</a></li>   	
      	</c:forEach>
         
         <c:choose>
 	 		<c:when test="${currentPage < lastPage }">
-	 			<li class="next"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${currentPage+1}">다음</a></li>
+	 			<li class="next"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${currentPage+10}">다음</a></li>
 	 		</c:when>
 	 		<c:otherwise>
 	 			<li class="next"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${currentPage}" style="color: #8C8C8C">다음</a></li>

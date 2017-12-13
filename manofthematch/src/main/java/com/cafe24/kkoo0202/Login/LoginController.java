@@ -17,21 +17,22 @@ public class LoginController {
 	
 	@Autowired
 	private LoginService loginService;
-	
 
-	
-	//로그인 처리
+	//濡쒓렇?????붿껌
 	@RequestMapping(value="/Login", method = RequestMethod.GET)
 	public String loginpro() {
-		System.out.println("Login.jsp로 요청");
+		System.out.println("Login.jsp濡??붿껌");
 		return "Login/Login";
 	}
+	
+	//濡쒓렇??泥섎━
 	@RequestMapping(value="/Login", method = RequestMethod.POST)
 	public String loginpro(Login login, HttpSession session) {
-		System.out.println("로그인" + login);
+		System.out.println("濡쒓렇??" + login);
 		return loginService.Login(login, session);
 	}
-	//로그아웃 처리
+	
+	//濡쒓렇?꾩썐 泥섎━
 	@RequestMapping(value="/Logout", method = RequestMethod.POST)
 	public String logoutpro(HttpSession session) {
 		return loginService.logout(session);

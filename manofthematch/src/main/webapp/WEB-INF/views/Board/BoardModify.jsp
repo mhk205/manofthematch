@@ -29,10 +29,7 @@
     */
     //조건 수정
        $('#modifyButton').click(function(){
-        	if($('#boardPw').val().length < 4) {
-                  alert('boardPw는 4자이상 이어야 합니다');
-                  $('#boardPw').focus();
-            } else if($('#boardName').val()=='') {
+        	if($('#boardName').val()=='') {
                 alert('boardName을 입력하세요');
                 $('#boardName').focus();
             } else if($('#boardContent').val()=='') {
@@ -74,10 +71,6 @@
         <div class="form-group">게시글 번호 :
             <input class="form-control" name="boardNo" value="${board.boardNo}" type="text" readonly="readonly"/>
         </div>
-        <div class="form-group">
-            <label for="boardPw">비밀번호 확인 :</label>
-            <input class="form-control" name="boardPw" id="boardPw" type="password"/>
-        </div>    
         <div class="form-group">
             <label for="memberNo">회원 번호 :</label>
             <input class="form-control" name="memberNo" id="memberNo" type="text"  value="${board.memberNo}" readonly />

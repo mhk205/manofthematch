@@ -18,36 +18,36 @@ public class LoginService implements LoginServiceInterface {
 	@Autowired
 	HttpSession session;
 	
-	//로그인
+	//濡쒓렇??
 	@Transactional
 	public String Login(Login login, HttpSession session) {
 		Login loginfor = loginDao.Login(login);
-		System.out.println("---로그인정보--->" + loginfor);
+		System.out.println("---濡쒓렇?몄젙蹂?-->" + loginfor);
 		
 		if(loginfor == null) {
-			System.out.println("--로그인실패--");
+			System.out.println("--濡쒓렇?몄떎??-");
 		} else {
-				System.out.println("--로그인완료---");
+				System.out.println("--濡쒓렇?몄셿猷?--");
 				
-				//로그인 세션 정보 세팅
+				//濡쒓렇???몄뀡 ?뺣낫 ?명똿
 				session.setAttribute("loginfor", loginfor);
 				session.setAttribute("Top", "Home");
 		}
 		return "redirect:/Home";
 	}
-	//로그아웃
+	//濡쒓렇?꾩썐
 	@Transactional
 	public String logout(HttpSession session) {
 		Login loginfor = (Login) session.getAttribute("loginfor");
-		System.out.println(loginfor + "현재 로그인 정보");
+		System.out.println(loginfor + "?꾩옱 濡쒓렇???뺣낫");
 		
 		session.invalidate();
-		System.out.println("--로그아웃 성공---");
+		System.out.println("--濡쒓렇?꾩썐 ?깃났---");
 		
 		return "redirect:/Home";
 		
 	}
-	//Home 세션 설정
+	//Home ?몄뀡 ?ㅼ젙
 	public void HomeSession() {
 		session.setAttribute("Top", "Home");
 	}

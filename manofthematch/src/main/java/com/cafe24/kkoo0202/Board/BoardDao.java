@@ -8,6 +8,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.cafe24.kkoo0202.Login.*;
+
 @Repository
 public class BoardDao implements BoardDaoInterface{
 	
@@ -16,28 +18,28 @@ public class BoardDao implements BoardDaoInterface{
 	
 	private final String NS = "com.cafe24.kkoo0202.Board.BoardMapper.";
 	
-	//리스트 전체 보기
+	//由ъ뒪???꾩껜 蹂닿린
 	public List<Board> boardAllList(int currentPage, int pagePerRow)
 	{
-		System.out.println("BoardDao의 baordAllList호춣");
+		System.out.println("BoardDao??baordAllList?몄땃");
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("beginRow", (currentPage-1) * pagePerRow);
 		map.put("pagePerRow", pagePerRow);
 		return sqlSessionTemplate.selectList(NS + "boardAllList", map);
 	}
 	
-	//리스트의 전체 수 보기
+	//由ъ뒪?몄쓽 ?꾩껜 ??蹂닿린
 	public int boardAllListCount()
 	{
-		System.out.println("BoardDao의 boardAllListCount호출");
+		System.out.println("BoardDao??boardAllListCount?몄텧");
 		return sqlSessionTemplate.selectOne(NS + "boardAllListCount");
 		
 	}
 	
-	//리스트 추가
+	//由ъ뒪??異붽?
 	public int boardAdd(Board board)
 	{
-		System.out.println("BoardDao의 boardAdd호출");	
+		System.out.println("BoardDao??boardAdd?몄텧");	
 		
 		System.out.println("board.boardCategoryNo :" + board.getBoardCategoryNo());
 		System.out.println("board.boardName :" + board.getBoardName());
@@ -47,30 +49,29 @@ public class BoardDao implements BoardDaoInterface{
 		return sqlSessionTemplate.insert(NS + "boardAdd", board);
 	}
 	
-	//해당 게시글의 상세 내역
+	//?대떦 寃뚯떆湲???곸꽭 ?댁뿭
 	public Board boardView(int boardNo)
 	{
-		System.out.println("BoardDao의 boardView호출");
+		System.out.println("BoardDao??boardView?몄텧");
 		
-		System.out.println("BoardDao의 boardNo : " + boardNo);
+		System.out.println("BoardDao??boardNo : " + boardNo);
 		
 		return sqlSessionTemplate.selectOne(NS + "boardView", boardNo);
 	}
 	
-	//게시글 수정 처리
+	//寃뚯떆湲 ?섏젙 泥섎━
 	public int boardModify(Board board)
 	{
-		System.out.println("BoardDao의 boardModify호출");
+		System.out.println("BoardDao??boardModify?몄텧");
 		return sqlSessionTemplate.update(NS + "boardModify", board);
 	}
 	
-	//게시글 삭제 처리
-	public int boardRemove(int boardNo, String boardPw)
+	//寃뚯떆湲 ??젣 泥섎━
+	public int boardRemove(int boardNo)
 	{
-		System.out.println("BoardDao의 boardRemove호출");
+		System.out.println("BoardDao??boardRemove?몄텧");
 		Board board = new Board();
 		board.setBoardNo(boardNo);
-		board.setBoardPw(boardPw);
 		return sqlSessionTemplate.delete(NS + "boardRemove", board);
 	}
 }

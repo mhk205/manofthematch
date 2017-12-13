@@ -10,12 +10,9 @@
 	<script>
     $(document).ready(function(){
         $('#removeButton').click(function(){
-            if($('#boardPw').val().length <4) {
-                alert('boardPw는 4자이상 이어야 합니다');
-                $('#boardPw').focus();
-            } else {
+            
                 $('#removeForm').submit();
-            }
+           
         });
     });
     </script>
@@ -60,13 +57,10 @@
 		<div class="container">
 		     <form  class="form-inline" id="removeForm" action="${pageContext.request.contextPath}/BoardRemove" method="post">
 		         <!-- boardPw와 함께 boardNo값도 숨겨서(hidden값으로) 넘김 -->
-		         <input name="boardNo" value="${param.boardNo}" type="hidden"/>
+		         <input name="boardNo" value="${param.boardNo}" type="text"/>		
+		         
 		         <div class="form-group">
-		             <label for="boardPw">비밀번호확인 :</label>
-		             <input class="form-control" id="boardPw" name="boardPw" type="password">
-		         </div>
-		         <div class="form-group">
-		             <input class="btn btn-default" id="removeButton" type="button" value="삭제"/>
+		             <input class="btn btn-default" id="removeButton" type="button" value="정말 삭제하실 건가요?"/>
 		         </div>
 		     </form>
 		</div>

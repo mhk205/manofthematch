@@ -2,6 +2,8 @@ package com.cafe24.kkoo0202.Board;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,21 +11,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.cafe24.kkoo0202.Login.*;
+import com.cafe24.kkoo0202.Member.*;
+import com.cafe24.kkoo0202.Login.*;
+
 @Controller
 public class BoardController {
 	@Autowired
 	BoardServiceInterface boardService;
 	
-	//전체리스트보기
+	@Autowired
+	private HttpSession session;
+	
+	//?꾩껜由ъ뒪?몃낫湲?
 	@RequestMapping(value = "/BoardAllList", method = RequestMethod.GET)
 	public String boardAllList(Model model
 								, @RequestParam(value="currentPage", required=false, defaultValue="1") int currentPage)
 	{
-		System.out.println("BoardController의 boardAllList호출");
+		System.out.println("BoardController??boardAllList?몄텧");
 		System.out.println("currentPage : " + currentPage);
-		//페이징을 위한 변수 선언 및 전체 게시글의 수
+		//?섏씠吏뺤쓣 ?꾪븳 蹂???좎뼵 諛??꾩껜 寃뚯떆湲????
 		int boardCount = boardService.boardAllListCount();
-		//한화면에 10개씩 보열 줄꺼임
+		//?쒗솕硫댁뿉 10媛쒖뵫 蹂댁뿴 以꾧볼??
 		int pagePerRow = 10;
 		int lastPage = (int)(Math.ceil(boardCount / (float) pagePerRow));
 		int nextPage = currentPage + 1;
@@ -44,46 +53,79 @@ public class BoardController {
 		return "Board/BoardList";
 	}
 	
-	//게시글 추가 (처리)
+	//寃뚯떆湲 異붽? (泥섎━)
 	@RequestMapping(value = "/BoardAdd", method = RequestMethod.POST)
 	public String boardAdd(Board board)
 	{
-		System.out.println("BoardController의 boardAdd호출(post)");
+		System.out.println("BoardController??boardAdd?몄텧(post)");
 		boardService.boardAdd(board);
 		return "redirect:/BoardAllList";
 	}
 	
-	//게시글 추가 폼으로 이동
+	//寃뚯떆湲 異붽? ?쇱쑝濡??대룞
 	@RequestMapping(value = "/BoardAdd", method = RequestMethod.GET)
-	public String boardAdd()
+	public String boardAdd(Model model, HttpSession session)
 	{
-		System.out.println("BoardController의 boardAdd호출(get)");
-		return "Board/BoardAdd";
+		String MapValue = null;
+		if(session.getAttribute("loginfor") == null)
+		{
+			MapValue = "Home";
+		}
+		else
+		{
+			MapValue = "Board/BoardAdd";
+		}
+		
+		System.out.println("BoardController??boardAdd?몄텧(get)");
+		return MapValue;
 	}
 	
-	//글 상세 내용 요청
+	//湲 ?곸꽭 ?댁슜 ?붿껌
 	@RequestMapping(value="/BoardView", method = RequestMethod.GET)
 	public String boardView(Model model, @RequestParam(value="boardNo", required=true) int boardNo)
 	{
-		System.out.println("BoardController의 boardView호출");
+		System.out.println("BoardController??boardView?몄텧");
 		Board board = boardService.boardView(boardNo);
 		model.addAttribute("board", board);
         
 		return "Board/BoardView";
 	}
 	
-	// 글 수정 폼 요청
+	// 湲 ?섏젙 ???붿껌
 	@RequestMapping(value="/BoardModify", method = RequestMethod.GET)
 	public String boardModify(Model model
-							, @RequestParam(value="boardNo", required=true) int boardNo)
+							, @RequestParam(value="boardNo", required=true) int boardNo
+							, HttpSession session)
 	{
-		System.out.println("BoardController의 boardModify호출");
+		String MapValue = null;
+		System.out.println("BoardController??boardModify?몄텧");
+		if(session.getAttribute("loginfor") == null)
+		{
+			MapValue = "Home";
+			return MapValue;
+		}
 		Board board = boardService.boardView(boardNo);
+		Login login = new Login();
+		login = (Login) session.getAttribute("loginfor");
+		System.out.println("-----------------------" + login.getMemberId());
+		String a1 = login.getMemberId();
+		System.out.println("-----------------------------------" + board.getMemberId());
+		String a2 = board.getMemberId();
+		if(a1.equals(a2))
+		{
+			MapValue = "Board/BoardModify";
+			
+		} 
+		else
+		{
+			MapValue = "Home";
+		}
 		model.addAttribute("board", board);
-		return "Board/BoardModify";
+		System.out.println("MapValue: " + MapValue);
+		return MapValue;
 	}
 	
-	// 글 수정 요청
+	// 湲 ?섏젙 ?붿껌
 	@RequestMapping(value="/BoardModify", method = RequestMethod.POST)
 	public String boardModify(Board board)
 	{
@@ -91,21 +133,42 @@ public class BoardController {
 		return "redirect:/BoardView?boardNo="+board.getBoardNo();
 	}
 	
-	// 글 삭제 폼 요청(비밀번호 입력 폼)
+	// 湲 ??젣 ???붿껌(鍮꾨?踰덊샇 ?낅젰 ??
 	@RequestMapping(value="/BoardRemove", method = RequestMethod.GET)
-	public String boardRemove(@RequestParam(value="boardNo", required=true) int boardNo)
+	public String boardRemove(@RequestParam(value="boardNo", required=true) int boardNo, HttpSession session)
 	{
-		System.out.println("BoardController의 boardRemove호출(get)");
-		return "Board/BoardRemove";
+		String MapValue = null;
+		System.out.println("BoardController??boardRemove?몄텧(get)");
+		if(session.getAttribute("loginfor") == null)
+		{
+			MapValue = "Home";
+			return MapValue;
+		}
+		Board board = boardService.boardView(boardNo);
+		Login login = new Login();
+		login = (Login) session.getAttribute("loginfor");
+		System.out.println("-----------------------" + login.getMemberId());
+		String a1 = login.getMemberId();
+		System.out.println("-----------------------------------" + board.getMemberId());
+		String a2 = board.getMemberId();
+		if(a1.equals(a2))
+		{
+			MapValue = "Board/BoardRemove";
+			
+		} 
+		else
+		{
+			MapValue = "Home";
+		}
+		return MapValue;
 	}
 	
-	// 글 삭제 요청
+	// 湲 ??젣 ?붿껌
 	@RequestMapping(value="/BoardRemove", method = RequestMethod.POST)
-	public String boardRemove(@RequestParam(value="boardNo", required=true) int boardNo
-							, @RequestParam(value="boardPw", required=true) String boardPw)
+	public String boardRemove(@RequestParam(value="boardNo", required=true) int boardNo)
 	{
-		System.out.println("BoardController의 boardRemove호출(post)");
-		boardService.boardRemove(boardNo, boardPw);
+		System.out.println("BoardController??boardRemove?몄텧(post)");
+		boardService.boardRemove(boardNo);
 		return "redirect:/BoardAllList";
 	}
 }

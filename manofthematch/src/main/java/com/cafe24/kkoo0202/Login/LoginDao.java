@@ -14,7 +14,7 @@ public class LoginDao {
 	private SqlSessionTemplate sqlSessionTemplate;
 	
 	private final String NS="com.cafe24.kkoo0202.Login.LoginMapper";
-	//로그인
+	//濡쒓렇??
 	public Login Login(Login login) {
 		System.out.println("Dao param login: " + login) ;
 		return sqlSessionTemplate.selectOne(NS+".login", login);

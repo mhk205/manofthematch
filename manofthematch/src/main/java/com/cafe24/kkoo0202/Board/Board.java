@@ -1,15 +1,18 @@
 package com.cafe24.kkoo0202.Board;
 
+import com.cafe24.kkoo0202.Login.*;
+
 public class Board {
 	private int boardNo;
 	private String memberNo;
+	private String memberId;
 	private String boardNo2;
 	private String boardCategoryNo;
 	private String boardName;
 	private String boardContent;
 	private String boardDate;
 	private String boardFile;
-	private String boardPw;
+	
 	public int getBoardNo() {
 		return boardNo;
 	}
@@ -21,6 +24,12 @@ public class Board {
 	}
 	public void setMemberNo(String memberNo) {
 		this.memberNo = memberNo;
+	}
+	public String getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 	public String getBoardNo2() {
 		return boardNo2;
@@ -58,12 +67,4 @@ public class Board {
 	public void setBoardFile(String boardFile) {
 		this.boardFile = boardFile;
 	}
-	public String getBoardPw() {
-		return boardPw;
-	}
-	public void setBoardPw(String boardPw) {
-		this.boardPw = boardPw;
-	}
-	
-	
 }

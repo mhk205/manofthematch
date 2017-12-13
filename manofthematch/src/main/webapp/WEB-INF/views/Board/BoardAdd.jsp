@@ -69,11 +69,8 @@
 	  		<c:import url="../Module/Top.jsp"/>
 		<!-- 입력 폼 -->
 		<form id="addForm" action="${pageContext.request.contextPath}/BoardAdd" method="post">
-		   
-			<div class="form-group">
-            	<label for="boardPw">글 비밀번호(게시글 수정 록은 삭제시 핑요) :</label>
-            	<input class="form-control" name="boardPw" id="boardPw" type="password"/>
-        	</div>
+		  	<input name="memberNo" value="${loginfor.memberNo}" type="hidden"/>
+		    <input name="memberId" value="${loginfor.memberId}" type="hidden"/>
 		    <div class="form-group">
 		        <label for="boardName">글 제목 :</label>
 		        <input class="form-control" name="boardName" id="boardName" type="text"/>

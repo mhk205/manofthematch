@@ -4,29 +4,32 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.cafe24.kkoo0202.Login.*;
+
 @Service
 public class BoardService implements BoardServiceInterface{
 	
 	@Autowired
     BoardDaoInterface boardDao;
 	
-	//전체 리스트 보기
+	//?꾩껜 由ъ뒪??蹂닿린
 	public List<Board> boardAllList(int currentPage, int pagePerRow)
 	{
-		System.out.println("BoardService의 boardAllList호출");
+		System.out.println("BoardService??boardAllList?몄텧");
 		return boardDao.boardAllList(currentPage, pagePerRow);
 	}
 	
-	//전체 리스트의 수 보기
+	//?꾩껜 由ъ뒪?몄쓽 ??蹂닿린
 	public int boardAllListCount()
 	{
-		System.out.println("BoardService의 boardAllListCount호출");
+		System.out.println("BoardService??boardAllListCount?몄텧");
 		return boardDao.boardAllListCount();
 	}
-	//게시글 추가
+	//寃뚯떆湲 異붽?
 	public int boardAdd(Board board)
 	{
-		System.out.println("BoardService의 boardAdd호출");
+		System.out.println("BoardService??boardAdd?몄텧");
 		
 		System.out.println("board.boardCategoryNo :" + board.getBoardCategoryNo());
 		System.out.println("board.boardName :" + board.getBoardName());
@@ -36,27 +39,27 @@ public class BoardService implements BoardServiceInterface{
 		return boardDao.boardAdd(board);
 	}
 	
-	//해당 게시글의 상세 내역
+	//?대떦 寃뚯떆湲???곸꽭 ?댁뿭
 	public Board boardView(int boardNo)
 	{
-		System.out.println("BoardService의 boardView호출");
+		System.out.println("BoardService??boardView?몄텧");
 		
-		System.out.println("BoardService의boardNo : " + boardNo);
+		System.out.println("BoardService?쁞oardNo : " + boardNo);
 		
 		return boardDao.boardView(boardNo);
 	}
 	
-	//게시글 수정
+	//寃뚯떆湲 ?섏젙
 	public int boardModify(Board board)
 	{
-		System.out.println("BoardService의 boardModify호출");
+		System.out.println("BoardService??boardModify?몄텧");
 		return boardDao.boardModify(board);
 	}
 	
-	//게시글 삭제
-	public int boardRemove(int boardNo, String boardPw)
+	//寃뚯떆湲 ??젣
+	public int boardRemove(int boardNo)
 	{
-		System.out.println("BoardService의 boardRemove호출");
-		return boardDao.boardRemove(boardNo, boardPw);
+		System.out.println("BoardService??boardRemove?몄텧");
+		return boardDao.boardRemove(boardNo);
 	}
 }
