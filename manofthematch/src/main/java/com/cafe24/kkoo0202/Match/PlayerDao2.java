@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class PlayerDao implements PlayerDaoInterface {
+public class PlayerDao2 implements PlayerDaoInterface2 {
 	
-	private Logger log = Logger.getLogger(PlayerDao.class);
+	private Logger log = Logger.getLogger(PlayerDao2.class);
 	
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
@@ -18,7 +18,7 @@ public class PlayerDao implements PlayerDaoInterface {
 	private static final String NS="com.cafe24.kkoo0202.Match.PlayerMapper.";
 	
 	@Override
-	public List<Player> PlayerList(int member_no) {
+	public List<Player2> PlayerList(int member_no) {
 		log.info(member_no);		
 		return sqlSessionTemplate.selectList(NS+"PlayerList", member_no);
 	}

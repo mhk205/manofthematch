@@ -27,7 +27,7 @@ public class MatchService implements MatchServiceInterface{
 	@Autowired
 	private MatchDaoInterface matchDao;
 	@Autowired
-	private PlayerDaoInterface playerDao;
+	private PlayerDaoInterface2 playerDao;
 	
 	private Map<String, Object> map;
 	
@@ -78,9 +78,9 @@ public class MatchService implements MatchServiceInterface{
 			log.info(member_id+" : MatchAddTeam");
 			int member_no = matchDao.MemberNoById(member_id);
 			log.info(member_no+" : MatchAddTeam");
-			List<Player> list = playerDao.PlayerList(member_no);
+			List<Player2> list = playerDao.PlayerList(member_no);
 			log.info(list+" : MatchAddTeam");
-			for(Player P :list) {
+			for(Player2 P :list) {
 				String team_name = P.getTeam_name();
 				log.info(team_name+" : MatchAddTeam");
 				matchDao.MatchTeamAdd(req, team_name);
@@ -107,7 +107,7 @@ public class MatchService implements MatchServiceInterface{
 		
 		//아이디로 멤버 번호 가져오기. 멤버 번호로 플레이어 리스트, 매치 리스트 불러오기.
 		int member_no = matchDao.MemberNoById(member_id);
-		List<Player> listP = playerDao.PlayerList(member_no);
+		List<Player2> listP = playerDao.PlayerList(member_no);
 		List<Match> listM = matchDao.MatchListDetail(mathcing_no);
 		
 		//확인
@@ -124,7 +124,7 @@ public class MatchService implements MatchServiceInterface{
 			log.info(MT);
 			log.info("----------------MT-----------------");
 			MT.setMatching_type_code(2);
-			for(Player P :listP) {
+			for(Player2 P :listP) {
 				String team_name = P.getTeam_name();
 				MT.setTeam_name(team_name);
 				log.info("----------------MT-----------------");

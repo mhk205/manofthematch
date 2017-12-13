@@ -28,7 +28,7 @@ public class MatchController {
 	private MatchDao matchDao;
 	
 	@Autowired
-	private PlayerDao playerDao;
+	private PlayerDao2 playerDao;
 	
 	@Autowired
 	private MatchService matchService;
@@ -104,7 +104,7 @@ public class MatchController {
 		log.info(MatchList);
 		model.addAttribute("GroundList", groundDao.GroundSelectById(matchService.MatchListDetail2(param)));
 		log.info(groundDao.GroundSelectById(matchService.MatchListDetail2(param)));
-		List<Player> playerList = null;
+		List<Player2> playerList = null;
 		for(Match ML : MatchList) {
 			String member_id = ML.getMember_id();
 			log.info(member_id);

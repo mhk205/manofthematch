@@ -1,6 +1,6 @@
 package com.cafe24.kkoo0202.Match;
 
-public class Player {
+public class Player2 {
 	private int member_no;
 	private String team_name;
 	private int player_grade_no;
