@@ -17,7 +17,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+	<!-- jquery를 사용하기위한 CDN주소 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#replyInsert").click(function(){
+				$("#replyAction").submit();
+			});
+		});
+	</script>
     <title>Man Of The Match</title>
 
     <!-- Bootstrap core CSS -->
@@ -58,6 +66,40 @@
         </tbody>
     </table>
     
+    <!-- replyList 보여주기 -->
+    <h1>댓글창</h1>
+	<div class="list-group">
+		<c:forEach var="rList" items="${replyList}">
+			<div>
+				<span>작성자 : </span><span>${rList.replyWriter}</span><br/>
+				<span>내용 : </span><span>${rList.replyContent}</span><br>
+				${rList.boardNo}<br>
+				${rList.replyNo}
+				<span><a href="${pageContext.request.contextPath}/replyDelete?boardNo=${rList.boardNo}&replyNo=${rList.replyNo}">삭제</a></span>
+			</div>
+			<div>
+				<span>---------------------------------------------------------------------------------</span>
+			</div>
+		</c:forEach>
+	</div>
+	
+    <!-- reply쓰기 -->
+	<div>
+		<form id="replyAction" action="${pageContext.request.contextPath}/replyInsert" method="POST">
+			<input type="hidden" name="boardNo" value="${board.boardNo}"/>
+			<div class="form-group row">
+	  			<label for="boardName">댓글 :</label>
+	  			<input class="form-control" name="replyContent" id="replyContent" type="text">
+		    </div>
+		    
+		    <div class="form-group row">
+		        <label for="boardName">작성자 :</label>
+		        <input class="form-control" name="replyWriter" id="replyWriter" type="hidden" value = "${loginfor.memberId }"/>
+		   		<input id="replyInsert" type="button" value="댓글등록"/>
+		    </div>
+		</form>
+	</div>
+	
     <a class="btn btn-default" href="${pageContext.request.contextPath}/BoardModify?boardNo=${board.boardNo}">수정</a>
     <a class="btn btn-default" href="${pageContext.request.contextPath}/BoardRemove?boardNo=${board.boardNo}">삭제</a>
     <a class="btn btn-default" href="${pageContext.request.contextPath}/BoardAllList">글목록</a>

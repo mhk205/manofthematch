@@ -1,7 +1,9 @@
 package com.cafe24.kkoo0202.Board;
 
 import java.util.List;
-import com.cafe24.kkoo0202.Login.*;
+
+
+
 
 public interface BoardDaoInterface {
 	public List<Board> boardAllList(int currentPage, int pagePerRow);
@@ -10,4 +12,8 @@ public interface BoardDaoInterface {
 	public Board boardView(int boardNo);
 	public int boardModify(Board board);
 	public int boardRemove(int boardNo);
+	public List<Reply> replyList(Reply reply);
+	public int replyInsert(Reply reply);
+	public int replyDelete(Reply reply);
+	public Reply replyDetail(int replyNo);
 }

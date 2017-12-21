@@ -85,8 +85,21 @@
 	 			<li class="previous"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${currentPage-10}">이전</a></li>
 	 		</c:otherwise>
 	 	</c:choose>    	
-        
-        <!-- (x-1)*currentPage + x  -->
+	 	
+<%-- <%     
+        for(int i = startPageCount; i<=endPageCount; i++) {
+				if(i==currentPage) {
+%>
+					<%=i %>
+<%					
+				} else {
+%>			
+				<a href="././employeeList.jsp?currentPage=<%=i%>"><%=i%></a>				
+<%
+				}
+			}
+%>         --%>
+
      	<c:forEach begin = "1" end = "10" var = "x" varStatus="status">
 	     	<li class="pagination"><a href="${pageContext.request.contextPath}/BoardAllList?currentPage=${x}">${x}</a></li>   	
      	</c:forEach>

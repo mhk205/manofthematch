@@ -59,7 +59,7 @@
 	        <h3 class="lead"><b>전술현황판 을 통해서 팀원을 배치하고 전술을 토론 해보세요!</b></h3>
 	        <p><a class="btn btn-lg btn-primary" href="TeamTactics" role="button">전술현황판 으로</a></p>
 	      </div>
-	      <div class="item maincarouseliteminner" style="background-image:URL(resources/image/team.jpg); background-repeat:no-repeat; background-position:center center; background-size:1150px 500px; height: 300px; color:white;" align=center>
+	      <div class="item maincarouseliteminner" style="background-image:URL(resources/image/team.jpg); background-repeat:no-repeat; background-position:center center; background-size:1150px 500px; height: 300px; color:++white;" align=center>
 	       <br> 
 	       <h1 align="center">게시판을 통해 의견을 나누세요</h1>&nbsp;
 	        <br>

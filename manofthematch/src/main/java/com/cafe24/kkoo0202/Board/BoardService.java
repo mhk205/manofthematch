@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cafe24.kkoo0202.Login.*;
+
+
 
 @Service
 public class BoardService implements BoardServiceInterface{
@@ -42,9 +43,9 @@ public class BoardService implements BoardServiceInterface{
 	//?대떦 寃뚯떆湲???곸꽭 ?댁뿭
 	public Board boardView(int boardNo)
 	{
-		System.out.println("BoardService??boardView?몄텧");
+		System.out.println("BoardService의boardView호출");
 		
-		System.out.println("BoardService?쁞oardNo : " + boardNo);
+		System.out.println("BoardService의boardNo : " + boardNo);
 		
 		return boardDao.boardView(boardNo);
 	}
@@ -62,4 +63,32 @@ public class BoardService implements BoardServiceInterface{
 		System.out.println("BoardService??boardRemove?몄텧");
 		return boardDao.boardRemove(boardNo);
 	}
+	
+	//댓글리스트
+	public List<Reply> replyList(Reply reply)
+	{
+		System.out.println("BoardService의replyList호출");
+		return boardDao.replyList(reply);
+	}
+	
+	//댓글 등록
+	public int replyInsert(Reply reply){
+		System.out.println("BoardService의replyInsert호출");
+		return boardDao.replyInsert(reply);
+	}
+	
+	//댓글 삭제
+	public int replyDelete(Reply reply)
+	{
+		System.out.println("BoardService의replyDelete호출");
+		return boardDao.replyDelete(reply);
+	}
+	
+	//댓글 삭제를 위한 쿼리??
+	public Reply replyDetail(int replyNo)
+	{
+		System.out.println("BoardService의replyDetail호출");
+		return boardDao.replyDetail(replyNo);
+	}
+
 }

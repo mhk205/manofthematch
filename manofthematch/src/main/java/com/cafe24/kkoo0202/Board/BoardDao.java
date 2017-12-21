@@ -8,7 +8,9 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.cafe24.kkoo0202.Login.*;
+
+
+
 
 @Repository
 public class BoardDao implements BoardDaoInterface{
@@ -52,9 +54,9 @@ public class BoardDao implements BoardDaoInterface{
 	//?대떦 寃뚯떆湲???곸꽭 ?댁뿭
 	public Board boardView(int boardNo)
 	{
-		System.out.println("BoardDao??boardView?몄텧");
+		System.out.println("BoardDao의boardView호출");
 		
-		System.out.println("BoardDao??boardNo : " + boardNo);
+		System.out.println("BoardDao의boardNo : " + boardNo);
 		
 		return sqlSessionTemplate.selectOne(NS + "boardView", boardNo);
 	}
@@ -73,5 +75,33 @@ public class BoardDao implements BoardDaoInterface{
 		Board board = new Board();
 		board.setBoardNo(boardNo);
 		return sqlSessionTemplate.delete(NS + "boardRemove", board);
+	}
+	
+	//댓글리스트
+	public List<Reply> replyList(Reply reply)
+	{
+		System.out.println("BoardDao의replyList호춯");
+		return sqlSessionTemplate.selectList(NS + "replyList", reply);
+	}
+	
+	//댓글추가
+	public int replyInsert(Reply reply)
+	{
+		System.out.println("BoardDao의replyInsert호춯");
+		return sqlSessionTemplate.insert(NS + "replyInsert", reply);
+	}
+	
+	//댓글삭제
+	public int replyDelete(Reply reply)
+	{
+		System.out.println("BoardDao의replyDelete호춯");
+		return sqlSessionTemplate.delete(NS + "replyDelete", reply);
+	}
+	
+	//댓글삭제를 위해 뽑는쿼리??
+	public Reply replyDetail(int replyNo)
+	{
+		System.out.println("BoardDao의replyDetail호춯");
+		return sqlSessionTemplate.selectOne(NS + "replyDetail", replyNo);
 	}
 }

@@ -83,7 +83,7 @@
 		     
 		      <h2 align="center">개발환경<br><br></h2>
 		      <p align="center"><font color="red">OS</font> : Windows7<br><br></p>
-		      <p align="center"><font color="red">웹브라우저</font> : Crome<br><br></p>
+		      <p align="center"><font color="red">웹브라우저</font> : Chrome<br><br></p>
 		      <p align="center"><font color="red">WAS</font> : apache-tomcat-8.0.xx<br><br></p>
 		      <p align="center"><font color="red">DB</font> : MySQL<br><br></p>
 		      <p align="center"><font color="red">DB관리툴</font> : HeidiSQL<br><br></p>
